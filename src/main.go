@@ -95,20 +95,6 @@ func (p red.Personnage) Menu() {
 	}
 }
 
-func (p red.Personnage) AccessInventory() {
-	fmt.Println("Inventaire:", p.inventaire)
-}
 
 
 
-func (p *red.Personnage) AddInventory(item string){
-	p.inventaire[item] += 1
-
-
-}
-
-func (p *red.Personnage) RemoveInventory(item string){
-	p.inventaire[item] -= 1
-
-
-}
