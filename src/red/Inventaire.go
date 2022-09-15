@@ -1,4 +1,5 @@
 package red
+import "fmt"
 
 func (p Personnage) AccessInventory() {
 	fmt.Println("Inventaire:", p.inventaire)
@@ -14,3 +15,5 @@ func (p *Personnage) AddInventory(item string){
 
 func (p *Personnage) RemoveInventory(item string){
 	p.inventaire[item] -= 1
+
+}

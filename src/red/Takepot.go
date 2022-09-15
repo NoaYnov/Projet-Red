@@ -6,10 +6,10 @@ func (p Personnage) TakePotHeal(){
 
 		p.RemoveInventory("potion de vie")
 
-		if p.points_de_vie_actuel < p.points_de_vie_max{
-			p.points_de_vie_actuel += 25
-			if p.points_de_vie_actuel > p.points_de_vie_max {
-				p.points_de_vie_actuel = p.points_de_vie_max
+		if p.point_de_vie_actuel < p.point_de_vie_max{
+			p.point_de_vie_actuel += 25
+			if p.point_de_vie_actuel > p.point_de_vie_max {
+				p.point_de_vie_actuel = p.point_de_vie_max
 		
 				
 			}

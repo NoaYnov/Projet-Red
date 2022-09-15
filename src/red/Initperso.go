@@ -1,30 +1,68 @@
 package red
 
-type Personnage struct {
+import "fmt"
+//le joueur doit choisir son age et son nom et son classe
+var age int
+var nom string
+var race string
+var classe string
 
-	age int
-	nom string
-	classe string
-	niveau int
-	force int
-	point_de_vie_max int
-	point_de_vie_actuel int
-	resistance_physique int
-	resistance_magique int
-	inventaire string
+func (p *Personnage) InitPerso(){
+    fmt.Println("Choisissez votre age")
+    fmt.Scanln(&age)
+    p.age = age
+
+
+
+
+
+
+
+
+
+    fmt.Println("Choisissez votre nom")
+    fmt.Scanln(&nom)
+    p.nom = nom
+
+
+
+
+
+
+
+
+    p.Menu_Race()
+    p.race = race
+
+
+
+
+
+
+
+
+
+    p.Menu_Classe()
+    p.classe = classe
+
+
+
+
+
+
+
+
+
+    fmt.Println("________________________________________________")
+    fmt.Printf("\n")
+    fmt.Println("Vous avez choisi de jouer en tant que", nom, "de", age, "ans et de classe", classe)
+    fmt.Println("________________________________________________")
+
+
+    
+   
+    
+
 
 }
 
-func (p Personnage) InitPerso(){
-    p.age = 32
-    p.nom = "Legolas"
-    p.classe = "Elfe"
-    p.niveau = 25
-    p.force = 10
-    p.point_de_vie_max = 100
-    p.point_de_vie_actuel = 100
-    p.resistance_physique = 50
-    p.resistance_magique = 50
-    p.inventaire = ("3potions de soin")
-
-}
