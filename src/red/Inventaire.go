@@ -1,7 +1,7 @@
 package red
 import "fmt"
 
-func (p Personnage) AccessInventory() {
+func (p *Personnage) AccessInventory() {
 	fmt.Println("Inventaire:", p.inventaire)
 }
 

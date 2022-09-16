@@ -2,7 +2,7 @@ package red
 
 import "fmt"
 
-func (p Personnage) Menu_Race() {
+func (p *Personnage) Menu_Race() {
 	var result int
 	var retour int
 

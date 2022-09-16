@@ -2,9 +2,9 @@ package red
 
 import "fmt"
 
-func (p Personnage) Menu_Classe() {
-	var result int
-	var retour int
+func (p *Personnage) Menu_Classe() {
+	var result1 int
+	var retour1 int
 
 	fmt.Println("Choissisez votre Classe parmi: ")
 	fmt.Println("1- Berserk")
@@ -14,20 +14,20 @@ func (p Personnage) Menu_Classe() {
 	fmt.Println("5- Archer")
 	fmt.Println("________________________________________________")
 	fmt.Printf("\n")
-	fmt.Scanln(&result)
-	switch result {
+	fmt.Scanln(&result1)
+	switch result1 {
 	case 1:
 		fmt.Println("Vous avez choisi les Berserk")
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
 		p.Berserk()
-		p.Display()
+		p.AccessInventory()
 		fmt.Println("1- confirmer")
 		fmt.Println("2- retour")
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
-		fmt.Scanln(&retour)
-		switch retour {
+		fmt.Scanln(&retour1)
+		switch retour1 {
 		case 1:
 			classe = "Berserk"
 			break
@@ -40,13 +40,13 @@ func (p Personnage) Menu_Classe() {
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
 		p.Mage()
-		p.Display()
+		p.AccessInventory()
 		fmt.Println("1- confirmer")
 		fmt.Println("2- retour")
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
-		fmt.Scanln(&retour)
-		switch retour {
+		fmt.Scanln(&retour1)
+		switch retour1 {
 		case 1:
 			classe = "Mage"
 			break
@@ -58,13 +58,13 @@ func (p Personnage) Menu_Classe() {
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
 		p.Paladin()
-		p.Display()
+		p.AccessInventory()
 		fmt.Println("1- confirmer")
 		fmt.Println("2- retour")
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
-		fmt.Scanln(&retour)
-		switch retour {
+		fmt.Scanln(&retour1)
+		switch retour1 {
 		case 1:
 			classe = "Paladin"
 			break
@@ -76,13 +76,13 @@ func (p Personnage) Menu_Classe() {
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
 		p.Voleur()
-		p.Display()
+		p.AccessInventory()
 		fmt.Println("1- confirmer")
 		fmt.Println("2- retour")
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
-		fmt.Scanln(&retour)
-		switch retour {
+		fmt.Scanln(&retour1)
+		switch retour1 {
 		case 1:
 			classe = "Voleur"
 			break
@@ -94,13 +94,13 @@ func (p Personnage) Menu_Classe() {
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
 		p.Archer()
-		p.Display()
+		p.AccessInventory()
 		fmt.Println("1- confirmer")
 		fmt.Println("2- retour")
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
-		fmt.Scanln(&retour)
-		switch retour {
+		fmt.Scanln(&retour1)
+		switch retour1 {
 		case 1:
 			classe = "Archer"
 			break

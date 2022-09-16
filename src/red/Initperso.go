@@ -55,8 +55,10 @@ func (p *Personnage) InitPerso(){
 
     fmt.Println("________________________________________________")
     fmt.Printf("\n")
-    fmt.Println("Vous avez choisi de jouer en tant que", nom, "de", age, "ans et de classe", classe)
+    fmt.Println("Vous avez choisi de jouer en tant que", nom, "de", age, "ans et de classe", classe, "de race",race)
+    p.Display()
     fmt.Println("________________________________________________")
+    p.Menu()
 
 
     

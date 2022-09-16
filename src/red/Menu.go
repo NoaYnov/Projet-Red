@@ -1,7 +1,7 @@
 package red
 
 import "fmt"
-func (p Personnage)Menu(){
+func (p *Personnage)Menu(){
 	
 	personnage := p
 	var result int

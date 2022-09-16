@@ -3,10 +3,10 @@ package red
 
 import "fmt"
 
-func (p Personnage) Display() {
+func (p *Personnage) Display() {
 	fmt.Println("Age :", p.age)
 	fmt.Println("Nom :", p.nom)
-	fmt.Println("Race :", race)
+	fmt.Println("Race :", p.race)
 	fmt.Println("Classe :", p.classe)
 	fmt.Println("Niveau :", p.niveau)
 	fmt.Println("Force :", p.force)

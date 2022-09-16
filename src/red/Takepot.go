@@ -1,6 +1,6 @@
 package red
 import "fmt"
-func (p Personnage) TakePotHeal(){
+func (p *Personnage) TakePotHeal(){
 	fmt.Println(p.inventaire["potion de vie"])
 	if p.inventaire["potion de vie"] >= 1{
 
