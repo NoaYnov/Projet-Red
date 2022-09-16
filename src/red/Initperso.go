@@ -28,6 +28,10 @@ func (p *Personnage) InitPerso(){
 
 
 
+    p.Menu_Classe()
+    p.classe = classe
+
+
 
 
 
@@ -40,10 +44,6 @@ func (p *Personnage) InitPerso(){
 
 
 
-
-
-    p.Menu_Classe()
-    p.classe = classe
 
 
 

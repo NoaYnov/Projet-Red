@@ -1,11 +1,8 @@
 package red
 
-type Race struct {
-	nom_de_race string
-}
 
 func (p *Personnage) Elfe() {
-	p.classe = "Elfe"
+	p.race = "Elfe"
 	p.niveau = 1
 	p.force = 15
 	p.point_de_vie_max = 110
@@ -16,7 +13,7 @@ func (p *Personnage) Elfe() {
 }
 
 func (p *Personnage) Orc() {
-	p.classe = "Orc"
+	p.race = "Orc"
 	p.niveau = 1
 	p.force = 10
 	p.point_de_vie_max = 150
@@ -26,7 +23,7 @@ func (p *Personnage) Orc() {
 }
 
 func (p *Personnage) Demon() {
-	p.classe = "Demon"
+	p.race = "Demon"
 	p.niveau = 1
 	p.force = 15
 	p.point_de_vie_max = 200
@@ -36,7 +33,7 @@ func (p *Personnage) Demon() {
 }
 
 func (p *Personnage) Humain() {
-	p.classe = "Humain"
+	p.race = "Humain"
 	p.niveau = 1
 	p.force = 10
 	p.point_de_vie_max = 100
@@ -46,7 +43,7 @@ func (p *Personnage) Humain() {
 }
 
 func (p *Personnage) Nain() {
-	p.classe = "Nain"
+	p.race = "Nain"
 	p.niveau = 1
 	p.force = 10
 	p.point_de_vie_max = 100

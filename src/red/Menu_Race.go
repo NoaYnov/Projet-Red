@@ -106,6 +106,14 @@ func (p *Personnage) Menu_Race() {
 			break
 		case 2:
 			p.Menu_Race()
+		
+
+		default:
+			fmt.Println("Vous n'avez pas choisi de Race")
+			p.Menu_Race()
+
+		
+
 		}
 
 

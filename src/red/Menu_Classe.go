@@ -107,6 +107,10 @@ func (p *Personnage) Menu_Classe() {
 
 		case 2:
 			p.Menu_Classe()
+
+		default:
+			fmt.Println("Vous n'avez pas choisi de classe")
+			p.Menu_Classe()
 		}
 	}
 }

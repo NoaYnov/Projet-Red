@@ -39,7 +39,7 @@ func (p *Personnage)Menu(){
 		fmt.Printf("\n")
 		fmt.Println("Quel est votre choix ?")
 		fmt.Println("1- Utiliser potion de soin")
-		fmt.Println("2- Utiliser potion de degats")
+		fmt.Println("2- Utiliser potion de poison")
 		fmt.Println("3- Retour")
 		fmt.Println("________________________________________________")
 		fmt.Scanln(&retour)
@@ -52,7 +52,9 @@ func (p *Personnage)Menu(){
 
 
 		case 2:
-			fmt.Println("lil")
+			p.PoisonPot()
+			fmt.Println(p.point_de_vie_actuel)
+			p.Menu()
 
 		case 3:
 			personnage.Menu()
