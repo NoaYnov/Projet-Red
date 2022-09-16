@@ -12,6 +12,7 @@ type Personnage struct {
 	point_de_vie_actuel int
 	resistance_physique int
 	resistance_magique int
+	skill []string
 	inventaire map[string]int
 
 }

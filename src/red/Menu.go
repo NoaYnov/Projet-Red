@@ -10,8 +10,9 @@ func (p *Personnage)Menu(){
 	fmt.Println("Choissisez une actions parmi: ")
 	fmt.Println("1- Afficher les informations du personnage")
 	fmt.Println("2- Accéder au contenu de l’inventaire")
-	fmt.Println("3- Shop")
-	fmt.Println("4- Quitter")
+	fmt.Println("3- Tableau de Skill")
+	fmt.Println("4- Shop")
+	fmt.Println("5- Quitter")
 	fmt.Println("________________________________________________")
 	fmt.Printf("\n")
 
@@ -69,8 +70,28 @@ func (p *Personnage)Menu(){
 			personnage.Menu()
 
 		}
-	
+
 	case 3:
+		fmt.Printf("\n")
+		p.DisplaySkill()
+		fmt.Println("1- Description des sorts")
+		fmt.Println("2- Retour")
+		fmt.Println("________________________________________________")
+		fmt.Scanln(&retour)
+		switch retour {
+		case 1:
+			// p.Description()
+			fmt.Println("lil")
+			personnage.Menu()
+		
+		case 2:
+			personnage.Menu()
+
+		}
+
+
+
+	case 4:
 		p.Shop()
 
 
@@ -80,7 +101,7 @@ func (p *Personnage)Menu(){
 
 
 
-	case 4:
+	case 5:
 		fmt.Println("Au revoir salope!!")
 		break
 	default:

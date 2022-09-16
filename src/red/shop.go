@@ -7,7 +7,11 @@ func (p *Personnage) Shop() {
 	fmt.Println("Que voulez vous acheter ?")
 	fmt.Println("1- Potion de soin")
 	fmt.Println("2- Potion de poison")
-	fmt.Println("3- Retour")
+	fmt.Println("3- spellBook : Boule de feu")
+	fmt.Println("4- spellBook : Boule de glace")
+	fmt.Println("5- spellBook : Boule de foudre")
+
+	fmt.Println("6- Retour")
 	var result int
 	fmt.Scanln(&result)
 	switch result {
@@ -22,8 +26,24 @@ func (p *Personnage) Shop() {
 		fmt.Println("Vous avez acheté une potion de poison")
 		p.Menu()
 
-
 	case 3:
+		p.AddSkill("spellBook : Boule de feu")
+		fmt.Println("Vous avez acheté un spellBook : Boule de feu")
+		p.Menu()
+
+	case 4:
+		p.AddSkill("spellBook : Boule de glace")
+		fmt.Println("Vous avez acheté un spellBook : Boule de glace")
+		p.Menu()
+
+	case 5:
+		p.AddSkill("spellBook : Boule de foudre")
+		fmt.Println("Vous avez acheté un spellBook : Boule de foudre")
+		p.Menu()
+
+
+
+	case 6:
 		p.Menu()
 
 	default:

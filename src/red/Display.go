@@ -14,5 +14,7 @@ func (p *Personnage) Display() {
 	fmt.Println("PV actuel :", p.point_de_vie_actuel)
 	fmt.Println("Resistance Physique :", p.resistance_physique)
 	fmt.Println("Resistance Magique :", p.resistance_magique)
+	fmt.Printf("Skill :")
+	p.DisplaySkill()
 	fmt.Println("-----------------------")
 }

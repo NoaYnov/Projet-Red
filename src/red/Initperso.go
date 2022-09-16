@@ -58,6 +58,12 @@ func (p *Personnage) InitPerso(){
     fmt.Println("Vous avez choisi de jouer en tant que", nom, "de", age, "ans et de classe", classe, "de race",race)
     p.Display()
     fmt.Println("________________________________________________")
+    fmt.Printf("\n")
+
+    fmt.Println("Inventaire")
+
+    p.AccessInventory()
+    fmt.Println("________________________________________________")
     p.Menu()
 
 

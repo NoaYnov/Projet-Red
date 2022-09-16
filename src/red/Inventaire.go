@@ -2,14 +2,21 @@ package red
 import "fmt"
 
 func (p *Personnage) AccessInventory() {
-	fmt.Println("Inventaire:", p.inventaire)
+    for k, v := range p.inventaire {
+        fmt.Printf("|%v:%v| ", k, v)
+        
+    }
+    fmt.Printf("\n")
 }
 
 
 
-func (p *Personnage) AddInventory(item string){
-	p.inventaire[item] += 1
-
+func (p *Personnage) AddInventory(item string) {
+    if p.inventaire[item] <= 10 {
+        p.inventaire[item] += 1
+    } else {
+        fmt.Println("Inventaire plein")
+    }
 
 }
 
