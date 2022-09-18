@@ -20,7 +20,6 @@ func (p *Personnage) Shop() {
 		fmt.Println("Vous avez acheté une potion de vie")
 		p.Menu()
 
-
 	case 2:
 		p.AddInventory("potion de poison")
 		fmt.Println("Vous avez acheté une potion de poison")

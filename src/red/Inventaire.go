@@ -12,11 +12,24 @@ func (p *Personnage) AccessInventory() {
 
 
 func (p *Personnage) AddInventory(item string) {
-    if p.inventaire[item] <= 10 {
-        p.inventaire[item] += 1
-    } else {
-        fmt.Println("Inventaire plein")
+    
+    if len(p.inventaire) == 15 {
+         fmt.Println("Inventaire plein")
+         
+    } else {for k, _ := range p.inventaire {
+        if p.inventaire[k] == 10 {
+          fmt.Println("Slot plein")
+          break
+            
+        } else {p.inventaire[item] += 1
+        break}
+        }
+       
     }
+     
+
+    
+
 
 }
 

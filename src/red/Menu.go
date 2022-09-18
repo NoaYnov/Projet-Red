@@ -111,7 +111,7 @@ func (p *Personnage)Menu(){
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
 		fmt.Printf("\n")
-		personnage.Menu()
+		p.Menu()
 
 	}
 }

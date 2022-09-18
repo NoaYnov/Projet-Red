@@ -1,7 +1,7 @@
 package red
 
 func (p *Personnage) Berserk() {
-	p.inventaire = map[string]int{"potion de vie": 3, "Hache": 1}
+	p.inventaire = map[string]int{"potion de vie": 9, "Hache": 1}
 	p.classe = "Berserk"
 
 }

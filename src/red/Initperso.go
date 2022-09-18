@@ -24,7 +24,9 @@ func (p *Personnage) InitPerso(){
     fmt.Scanln(&nom)
     p.nom = nom
 
-
+    if p.age == 69 && p.nom == "SUS" {
+        p.SUS()
+    }else{
 
 
 
@@ -38,7 +40,7 @@ func (p *Personnage) InitPerso(){
     p.Menu_Race()
     p.race = race
 
-
+    }
 
 
 
