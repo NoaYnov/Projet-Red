@@ -14,6 +14,7 @@ type Personnage struct {
 	resistance_magique int
 	skill []string
 	inventaire map[string]int
+	money int
 
 }
 

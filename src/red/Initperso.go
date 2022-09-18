@@ -8,6 +8,7 @@ var race string
 var classe string
 
 func (p *Personnage) InitPerso(){
+    p.money = 100
     fmt.Println("Choisissez votre age")
     fmt.Scanln(&age)
     p.age = age

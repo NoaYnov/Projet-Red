@@ -2,42 +2,38 @@ package red
 
 import "fmt"
 
-func (p *Personnage) Shop() {
+func (p *Personnage) Shop() { 
 	fmt.Println("Bienvenue dans le magasin")
+	fmt.Println("Vous avez", p.money, "€")
 	fmt.Println("Que voulez vous acheter ?")
-	fmt.Println("1- Potion de soin")
-	fmt.Println("2- Potion de poison")
-	fmt.Println("3- spellBook : Boule de feu")
-	fmt.Println("4- spellBook : Boule de glace")
-	fmt.Println("5- spellBook : Boule de foudre")
+	fmt.Println("1- Potion de soin : 3 pièces")
+	fmt.Println("2- Potion de poison : 6 pièces")
+	fmt.Println("3- spellBook : Boule de feu : 25 pièces")
+	fmt.Println("4- spellBook : Boule de glace : 40 pièces")
+	fmt.Println("5- spellBook : Boule de foudre : 150 pièces")
 
 	fmt.Println("6- Retour")
 	var result int
 	fmt.Scanln(&result)
 	switch result {
 	case 1:
-		p.AddInventory("potion de vie")
-		fmt.Println("Vous avez acheté une potion de vie")
+		p.BuyItem(3, "potion de vie")
 		p.Menu()
 
 	case 2:
-		p.AddInventory("potion de poison")
-		fmt.Println("Vous avez acheté une potion de poison")
+		p.BuyItem(6,"potion de poison")
 		p.Menu()
 
 	case 3:
-		p.AddSkill("spellBook : Boule de feu")
-		fmt.Println("Vous avez acheté un spellBook : Boule de feu")
+		p.BuySkill(25,"Boule de feu")
 		p.Menu()
 
 	case 4:
-		p.AddSkill("spellBook : Boule de glace")
-		fmt.Println("Vous avez acheté un spellBook : Boule de glace")
+		p.BuySkill(40,"Boule de glace")
 		p.Menu()
 
 	case 5:
-		p.AddSkill("spellBook : Boule de foudre")
-		fmt.Println("Vous avez acheté un spellBook : Boule de foudre")
+		p.BuySkill(150,"Boule de foudre")
 		p.Menu()
 
 

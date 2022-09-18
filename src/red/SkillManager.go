@@ -1,13 +1,6 @@
 package red
 
 func (p *Personnage) AddSkill(skill string) {
-	for _, v := range p.skill {
-		if v == skill { 
-			println("Vous avez déjà ce skill")
-			break
-	
-		}
-	}
 	p.skill = append(p.skill, skill)
 }
 
@@ -29,4 +22,13 @@ func (p *Personnage) DisplaySkill() {
 		println(v)
 	}
 println("\n")
+}
+
+func (p *Personnage) TestRemoveSkill(skill string) bool {
+	for _, v := range p.skill {
+		if v == skill {
+			return false
+		}
+	}
+	return true
 }
