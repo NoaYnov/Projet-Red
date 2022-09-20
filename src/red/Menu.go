@@ -10,9 +10,11 @@ func (p *Personnage)Menu(){
 	fmt.Println("Choissisez une actions parmi: ")
 	fmt.Println("1- Afficher les informations du personnage")
 	fmt.Println("2- Accéder au contenu de l’inventaire")
-	fmt.Println("3- Tableau de Skill")
-	fmt.Println("4- Shop")
-	fmt.Println("5- Quitter")
+	fmt.Println("3- Accéder au contenu de l’inventaire d’armure")
+	fmt.Println("4- Tableau de Skill")
+	fmt.Println("5- Shop")
+	fmt.Println("6- Forge")
+	fmt.Println("7- Quitter")
 	fmt.Println("________________________________________________")
 	fmt.Printf("\n")
 
@@ -73,6 +75,23 @@ func (p *Personnage)Menu(){
 
 	case 3:
 		fmt.Printf("\n")
+		p.AccessInventoryArmor()
+		fmt.Printf("\n")
+		fmt.Println("1- Retour")
+		fmt.Println("________________________________________________")
+		fmt.Scanln(&retour)
+		switch retour {
+		case 1:
+			p.Menu()
+
+		default:
+			fmt.Println("________________________________________________")
+			fmt.Printf("\n")
+			fmt.Println("Aucun choix associe")
+			fmt.Println("________________________________________________")
+		}
+	case 4:
+		fmt.Printf("\n")
 		p.DisplaySkill()
 		fmt.Println("1- Description des sorts")
 		fmt.Println("2- Retour")
@@ -91,17 +110,18 @@ func (p *Personnage)Menu(){
 
 
 
-	case 4:
+	case 5:
 		p.Shop()
 
 
 
 
+	case 6:
+		p.Forge()
 
 
 
-
-	case 5:
+	case 7:
 		fmt.Println("Au revoir salope!!")
 		break
 	default:

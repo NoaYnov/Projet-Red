@@ -24,7 +24,7 @@ func (p *Personnage) DisplaySkill() {
 println("\n")
 }
 
-func (p *Personnage) TestRemoveSkill(skill string) bool {
+func (p *Personnage) TestAddSkill(skill string) bool {
 	for _, v := range p.skill {
 		if v == skill {
 			return false

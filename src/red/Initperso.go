@@ -35,7 +35,7 @@ func (p *Personnage) InitPerso(){
     p.classe = classe
 
 
-
+    p.inventaireArmor = map[string]string{"Bonnet": "Helmet"}
 
 
     p.Menu_Race()
