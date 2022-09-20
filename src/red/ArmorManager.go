@@ -33,7 +33,6 @@ func (p *Personnage) DisplayArmor() {
 	p.DisplayGloves()
 	p.DisplayPants()
 	p.DisplayChestplate()
-
 }
 
 func (p *Personnage) TestLenAddArmor(item string)bool{
@@ -44,7 +43,6 @@ func (p *Personnage) TestLenAddArmor(item string)bool{
 }
 func (p *Personnage) TestItemAddArmor(item string)bool{
 	for v, _ := range p.inventaireArmor {
-		fmt.Println(v)
 		if v == item {
 			return false
 		}
@@ -133,14 +131,88 @@ func (p *Personnage) DisplayChestplate(){
 }
 
 
-func (p *Personnage) EquipHelmet(item string){
-	var choix string
-	fmt.Println("Quel item voulez vous equiper?")
-	fmt.Scan(&choix)
-	if p.helmet != choix{
-		fmt.Println("Vous avez choisi de vous equiper de", choix)
-		p.inventaireArmor[choix] = "Equipped"
-	}else{
-		fmt.Println("Cet item et deja equipé")
+func (p *Personnage) EquipHelmet(choix int){
+
+	switch choix {
+	case 1:
+		p.helmet = "Bonnet"
+		fmt.Println("Vous avez choisi de vous equiper d'un bonnet")
+	case 2:
+		if p.TestItemAddArmor("Chapeau de l'aventurier") == false{
+		p.helmet = "Chapeau de l'aventurier"
+		fmt.Println("Vous avez choisi de vous equiper d'un chapeau de l'aventurier")
+		}else{
+			fmt.Println("Vous n'avez pas cet item")
+		}
+	
 	}
 }
+
+func (p *Personnage) EquipBoots(choix int){
+	
+	switch choix {
+	case 1:
+		p.boots = "Bottes de cuir"
+		fmt.Println("Vous avez choisi de vous equiper de bottes de cuir")
+	case 2:
+		if p.TestItemAddArmor("Bottes de l'aventurier") == false{
+		p.boots = "Bottes de l'aventurier"
+		fmt.Println("Vous avez choisi de vous equiper de bottes de l'aventurier")
+		}else{
+			fmt.Println("Vous n'avez pas cet item")
+		}
+	
+	}
+}
+
+func (p *Personnage) EquipGloves(choix int){
+	
+	switch choix {
+	case 1:
+		p.gloves = "Gants de cuir"
+		fmt.Println("Vous avez choisi de vous equiper de gants de cuir")
+	case 2:
+		if p.TestItemAddArmor("Gants de l'aventurier") == false{
+		p.gloves = "Gants de l'aventurier"
+		fmt.Println("Vous avez choisi de vous equiper de gants de l'aventurier")
+		}else{
+			fmt.Println("Vous n'avez pas cet item")
+		}
+	
+	}
+}
+
+func (p *Personnage) EquipPants(choix int){
+	
+	switch choix {
+	case 1:
+		p.pants = "Pantalon de cuir"
+		fmt.Println("Vous avez choisi de vous equiper de pantalon de cuir")
+	case 2:
+		if p.TestItemAddArmor("Pantalon de l'aventurier") == false{
+		p.pants = "Pantalon de l'aventurier"
+		fmt.Println("Vous avez choisi de vous equiper de pantalon de l'aventurier")
+		}else{
+			fmt.Println("Vous n'avez pas cet item")
+		}
+	
+	}
+}
+
+func (p *Personnage) EquipChestplate(choix int){
+	
+	switch choix {
+	case 1:
+		p.chestplate = "Plastron de cuir"
+		fmt.Println("Vous avez choisi de vous equiper de plastron de cuir")
+	case 2:
+		if p.TestItemAddArmor("Plastron de l'aventurier") == false{
+		p.chestplate = "Plastron de l'aventurier"
+		fmt.Println("Vous avez choisi de vous equiper de plastron de l'aventurier")
+		}else{
+			fmt.Println("Vous n'avez pas cet item")
+		}
+	
+	}
+}
+

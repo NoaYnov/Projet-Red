@@ -74,8 +74,7 @@ func (p *Personnage)Menu(){
 		}
 
 	case 3:
-		p.MenuEquipement()
-		p.Menu()
+		personnage.MenuEquipement()
 
 		
 	case 4:
