@@ -74,22 +74,10 @@ func (p *Personnage)Menu(){
 		}
 
 	case 3:
-		fmt.Printf("\n")
-		p.AccessInventoryArmor()
-		fmt.Printf("\n")
-		fmt.Println("1- Retour")
-		fmt.Println("________________________________________________")
-		fmt.Scanln(&retour)
-		switch retour {
-		case 1:
-			p.Menu()
+		p.MenuEquipement()
+		p.Menu()
 
-		default:
-			fmt.Println("________________________________________________")
-			fmt.Printf("\n")
-			fmt.Println("Aucun choix associe")
-			fmt.Println("________________________________________________")
-		}
+		
 	case 4:
 		fmt.Printf("\n")
 		p.DisplaySkill()

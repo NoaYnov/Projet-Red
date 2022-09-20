@@ -2,39 +2,37 @@ package red
 import "fmt"
 func (p *Personnage) MenuEquipement() {
 	var choix int
-	for {
-		p.AccessInventoryArmor()
-		p.AccessArmor()
-		fmt.Println("1. Equip Helmet")
-		fmt.Println("2. Equip Boots")
-		fmt.Println("3. Equip Gloves")
-		fmt.Println("4. Equip Pants")
-		fmt.Println("5. Equip Chestplate")
-		fmt.Println("11. Quit")
-		fmt.Scan(&choix)
-		switch choix {
-		case 1:
-			p.EquipHelmet()
-		// case 2:
-		// 	p.EquipBoots()
-		// case 3:
-		// 	p.EquipGloves()
-		// case 4:
-		// 	p.EquipPants()
-		// case 5:
-		// 	p.EquipChestplate()
-		// case 6:
-		// 	p.UnequipHelmet()
-		// case 7:
-		// 	p.UnequipBoots()
-		// case 8:
-		// 	p.UnequipGloves()
-		// case 9:
-		// 	p.UnequipPants()
-		// case 10:
-		// 	p.UnequipChestplate()
-		// case 11:
-		// 	return
-		}
+	p.DisplayArmor()
+	fmt.Println("1- Equiper un casque")
+	fmt.Println("2. Equiper des bottes")
+	fmt.Println("3. Equiper des gants")
+	fmt.Println("4. Equiper un pantalon")
+	fmt.Println("5. Equiper un plastron")
+	fmt.Println("6- Retour")
+	fmt.Scan(&choix)
+	switch choix {
+	case 1:
+		p.DisplayHelmet()
+		fmt.Println("________________________________________________")
+		fmt.Println("vous avez choisi de vous equiper d'un casque")
+		fmt.Println(p.helmet, "est deja equipé")
+
+	case 2:
+		p.DisplayBoots()
+	case 3:
+		p.DisplayGloves()
+	case 4:
+		p.DisplayPants()
+	case 5:
+		p.DisplayChestplate()
+	case 6:
+		fmt.Println("________________________________________________")
+		fmt.Println("Vous avez choisi de retourner au menu principal")
+		p.Menu()
+
+	default:
+		fmt.Println("Aucun choix associe")
+		p.Menu()
 	}
+	
 }

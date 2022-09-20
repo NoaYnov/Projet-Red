@@ -9,6 +9,15 @@ var classe string
 
 func (p *Personnage) InitPerso(){
     p.money = 100
+
+
+    p.helmet = "rien"
+	p.chestplate = "rien"
+	p.pants = "rien"
+	p.boots = "rien"
+	p.gloves = "rien"
+
+
     fmt.Println("Choisissez votre age")
     fmt.Scanln(&age)
     p.age = age
