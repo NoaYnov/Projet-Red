@@ -4,6 +4,7 @@ import "fmt"
 
 func (p *Personnage) Shop() { 
 	var NBR int
+	var result7 int
 	fmt.Println("Bienvenue dans le magasin")
 	fmt.Println("Vous avez", p.money, "€")
 	fmt.Println("Que voulez vous acheter ?")
@@ -15,9 +16,8 @@ func (p *Personnage) Shop() {
 	fmt.Println("6- Tissus : 2 pièces/unité")
 	fmt.Println("7- Cuir : 4 pièces/unité")
 	fmt.Println("8- Retour")
-	var result int
-	fmt.Scanln(&result)
-	switch result {
+	fmt.Scanln(&result7)
+	switch result7 {
 	case 1:
 		fmt.Println("Combien de potion de vie voulez vous acheter ?")
 		fmt.Scanln(&NBR)

@@ -1,34 +1,34 @@
 package red
 import "fmt"
 func (p *Personnage) Forge() {
-	var result int
+	var result0 int
 	fmt.Println("Bienvenue dans la forge")
 	fmt.Printf("Vous avez")
 	p.AccessInventory()
 	p.AccessMoney()
 	fmt.Println("Que voulez vous fabriquer ?")
-	fmt.Println("1-Chapeau de l’aventurier : 10 pièces , 1 tissu, 2 cuir")
+	fmt.Println("1- Chapeau de l’aventurier : 10 pièces , 1 tissu, 2 cuir")
 	fmt.Println("2- Bottes de l’aventurier : 8 pièces , 2 tissu, 1 cuir")
 	fmt.Println("3- Gants de l’aventurier : 3 pièces , 3 tissu, 1 cuir")
 	fmt.Println("4- Pantalon de l’aventurier : 10 pièces , 4 tissu, 4 cuir")
 	fmt.Println("5- Plastron de l’aventurier : 25 pièces , 8 tissu, 6 cuir")
 	fmt.Println("6- Retour")
-	fmt.Scanln(&result)
-	switch result {
+	fmt.Scanln(&result0)
+	switch result0 {
 	case 1:
-		p.CraftForgeHelmet(10,"tissu",1,"cuir",2,"Chapeau de l’aventurier")
+		p.CraftForgeHelmet(10,"tissu",1,"cuir",2,"Chapeau_de_l’aventurier")
 		p.Menu()
 	case 2:
-		p.CraftForgeBoots(8,"tissu",2,"cuir",1,"Bottes de l’aventurier")
+		p.CraftForgeBoots(8,"tissu",2,"cuir",1,"Bottes_de_l’aventurier")
 		p.Menu()
 	case 3:
-		p.CraftForgeGloves(3,"tissu",3,"cuir",1,"Gants de l’aventurier")
+		p.CraftForgeGloves(3,"tissu",3,"cuir",1,"Gants_de_l’aventurier")
 		p.Menu()
 	case 4:
-		p.CraftForgePants(10,"tissu",4,"cuir",4,"Pantalon de l’aventurier")
+		p.CraftForgePants(10,"tissu",4,"cuir",4,"Pantalon_de_l’aventurier")
 		p.Menu()
 	case 5:
-		p.CraftForgeChestplate(25,"tissu",8,"cuir",6,"Plastron de l’aventurier")
+		p.CraftForgeChestplate(25,"tissu",8,"cuir",6,"Plastron_de_l’aventurier")
 		p.Menu()
 
 	case 6:

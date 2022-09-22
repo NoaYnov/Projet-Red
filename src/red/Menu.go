@@ -8,6 +8,7 @@ func (p *Personnage)Menu(){
 	var retour int
 
 	fmt.Println("Choissisez une actions parmi: ")
+	fmt.Printf("\n")
 	fmt.Println("1- Afficher les informations du personnage")
 	fmt.Println("2- Accéder au contenu de l’inventaire")
 	fmt.Println("3- Accéder au contenu de l’inventaire d’armure")
@@ -74,8 +75,7 @@ func (p *Personnage)Menu(){
 		}
 
 	case 3:
-		personnage.MenuEquipement()
-
+		p.MenuEquipement()
 		
 	case 4:
 		fmt.Printf("\n")
@@ -109,9 +109,10 @@ func (p *Personnage)Menu(){
 
 
 	case 7:
-		fmt.Println("Au revoir salope!!")
+		fmt.Println("RAGE QUIT ???")
 		break
 	default:
+		fmt.Println(retour)
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
 		fmt.Println("Aucun menu associe")
@@ -122,4 +123,3 @@ func (p *Personnage)Menu(){
 
 	}
 }
-

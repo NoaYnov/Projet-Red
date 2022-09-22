@@ -10,12 +10,11 @@ var classe string
 func (p *Personnage) InitPerso(){
     p.money = 100
 
-
-    p.helmet = "rien"
-	p.chestplate = "rien"
-	p.pants = "rien"
-	p.boots = "rien"
-	p.gloves = "rien"
+    p.armor.helmet = []string{"bonnet"}
+    p.armor.boots = []string{"bottes"}
+    p.armor.gloves = []string{"gants"}
+    p.armor.pants = []string{"pantalon"}
+    p.armor.chestplate = []string{"tunique"}
 
 
     fmt.Println("Choisissez votre age")
@@ -44,7 +43,7 @@ func (p *Personnage) InitPerso(){
     p.classe = classe
 
 
-    p.inventaireArmor = map[string]string{"Bonnet": "Helmet"}
+   
 
 
     p.Menu_Race()

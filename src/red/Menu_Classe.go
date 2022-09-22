@@ -4,7 +4,7 @@ import "fmt"
 
 func (p *Personnage) Menu_Classe() {
 	var result1 int
-	var retour1 int
+	var retour8 int
 
 	fmt.Println("Choissisez votre Classe parmi: ")
 	fmt.Println("1- Berserk")
@@ -26,8 +26,8 @@ func (p *Personnage) Menu_Classe() {
 		fmt.Println("2- retour")
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
-		fmt.Scanln(&retour1)
-		switch retour1 {
+		fmt.Scanln(&retour8)
+		switch retour8 {
 		case 1:
 			classe = "Berserk"
 			break
@@ -45,8 +45,8 @@ func (p *Personnage) Menu_Classe() {
 		fmt.Println("2- retour")
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
-		fmt.Scanln(&retour1)
-		switch retour1 {
+		fmt.Scanln(&retour8)
+		switch retour8 {
 		case 1:
 			classe = "Mage"
 			break
@@ -63,8 +63,8 @@ func (p *Personnage) Menu_Classe() {
 		fmt.Println("2- retour")
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
-		fmt.Scanln(&retour1)
-		switch retour1 {
+		fmt.Scanln(&retour8)
+		switch retour8 {
 		case 1:
 			classe = "Paladin"
 			break
@@ -81,8 +81,8 @@ func (p *Personnage) Menu_Classe() {
 		fmt.Println("2- retour")
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
-		fmt.Scanln(&retour1)
-		switch retour1 {
+		fmt.Scanln(&retour8)
+		switch retour8 {
 		case 1:
 			classe = "Voleur"
 			break
@@ -99,8 +99,8 @@ func (p *Personnage) Menu_Classe() {
 		fmt.Println("2- retour")
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
-		fmt.Scanln(&retour1)
-		switch retour1 {
+		fmt.Scanln(&retour8)
+		switch retour8 {
 		case 1:
 			classe = "Archer"
 			break
@@ -112,5 +112,10 @@ func (p *Personnage) Menu_Classe() {
 			fmt.Println("Vous n'avez pas choisi de classe")
 			p.Menu_Classe()
 		}
+	
+	default:
+		fmt.Println("Vous n'avez pas choisi de classe")
+		p.Menu_Classe()
+	
 	}
 }

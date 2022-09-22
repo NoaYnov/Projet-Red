@@ -16,11 +16,21 @@ type Personnage struct {
 	inventaire map[string]int
 	inventaireArmor map[string]string
 	money int
-	helmet string
-	chestplate string
-	pants string
-	boots string
-	gloves string
+	armor Armor
+	equiphelmet string
+	equipchestplate string
+	equippants string
+	equipboots string
+	equipgloves string
+
 
 }
 
+type Armor struct{
+	helmet []string
+	boots []string
+	gloves []string
+	pants []string
+	chestplate []string
+
+}
