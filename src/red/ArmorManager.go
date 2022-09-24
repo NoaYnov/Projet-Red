@@ -3,6 +3,8 @@ package red
 import "fmt"
 
 func (p *Personnage) AccessAllArmor() {
+
+	fmt.Println("Bienvenue dans le menu des équipements. Ils vous permettent d'améliorer vos statistiques de personnage")
 	fmt.Println("Voici les armures que vous possédez :")
 	fmt.Println(p.armor.helmet)
 	fmt.Println(p.armor.boots)
@@ -31,10 +33,10 @@ func (p *Personnage) AddChestplate(res string) {
 	p.armor.chestplate = append(p.armor.chestplate, res)
 }
 
-func (p *Personnage) TestLenAddArmor(item string)bool{
+func (p *Personnage) TestLenAddArmor(item string) bool {
 	if len(p.armor.helmet) >= 5 || len(p.armor.boots) >= 5 || len(p.armor.gloves) >= 5 || len(p.armor.pants) >= 5 || len(p.armor.chestplate) >= 5 {
 		return false
-	}else{
+	} else {
 		return true
 	}
 }

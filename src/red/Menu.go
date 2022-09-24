@@ -1,8 +1,9 @@
 package red
 
 import "fmt"
-func (p *Personnage)Menu(){
-	
+
+func (p *Personnage) Menu() {
+
 	personnage := p
 	var result int
 	var retour int
@@ -15,7 +16,8 @@ func (p *Personnage)Menu(){
 	fmt.Println("4- Tableau de Skill")
 	fmt.Println("5- Shop")
 	fmt.Println("6- Forge")
-	fmt.Println("7- Quitter")
+	fmt.Println("7- Training")
+	fmt.Println("8- Quitter")
 	fmt.Println("________________________________________________")
 	fmt.Printf("\n")
 
@@ -25,11 +27,12 @@ func (p *Personnage)Menu(){
 		p.Display()
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
-		fmt.Println("Choissisez une actions parmi: retour ")
+		fmt.Println("Choissisez une actions parmi:")
+		fmt.Println("1- retour")
 		fmt.Println("________________________________________________")
 		fmt.Scanln(&retour)
 
-		if retour == 3 {
+		if retour == 1 {
 			personnage.Menu()
 		}
 
@@ -53,8 +56,6 @@ func (p *Personnage)Menu(){
 			fmt.Println(p.point_de_vie_actuel)
 			p.Menu()
 
-
-
 		case 2:
 			p.PoisonPot()
 			fmt.Println(p.point_de_vie_actuel)
@@ -76,7 +77,7 @@ func (p *Personnage)Menu(){
 
 	case 3:
 		p.MenuEquipement()
-		
+
 	case 4:
 		fmt.Printf("\n")
 		p.DisplaySkill()
@@ -89,28 +90,25 @@ func (p *Personnage)Menu(){
 			// p.Description()
 			fmt.Println("lil")
 			personnage.Menu()
-		
+
 		case 2:
 			personnage.Menu()
 
 		}
 
-
-
 	case 5:
 		p.Shop()
-
-
-
 
 	case 6:
 		p.Forge()
 
-
-
 	case 7:
-		fmt.Println("RAGE QUIT ???")
-		break
+		p.TrainingFight()
+
+	case 8:
+		fmt.Println("ALT+F4")
+		return
+
 	default:
 		fmt.Println(retour)
 		fmt.Println("________________________________________________")

@@ -2,10 +2,10 @@ package red
 
 import "fmt"
 
-func (p *Personnage) Shop() { 
+func (p *Personnage) Shop() {
 	var NBR int
 	var result7 int
-	fmt.Println("Bienvenue dans le magasin")
+	fmt.Println("Bienvenue dana le shop, vous pourrez y acheter toute sorte d'objet très utile pendant votre aventure")
 	fmt.Println("Vous avez", p.money, "€")
 	fmt.Println("Que voulez vous acheter ?")
 	fmt.Println("1- Potion de soin : 3 pièces/unité")
@@ -21,37 +21,37 @@ func (p *Personnage) Shop() {
 	case 1:
 		fmt.Println("Combien de potion de vie voulez vous acheter ?")
 		fmt.Scanln(&NBR)
-		p.BuySeveralItem(3,NBR, "potion de vie")
+		p.BuySeveralItem(3, NBR, "potion de vie")
 		p.Menu()
 
 	case 2:
 		fmt.Println("Combien de potion de poison voulez vous acheter ?")
 		fmt.Scanln(&NBR)
-		p.BuySeveralItem(6,NBR,"potion de poison")
+		p.BuySeveralItem(6, NBR, "potion de poison")
 		p.Menu()
 
 	case 3:
-		p.BuySkill(25,"Boule de feu")
+		p.BuySkill(25, "Boule de feu")
 		p.Menu()
 
 	case 4:
-		p.BuySkill(40,"Boule de glace")
+		p.BuySkill(40, "Boule de glace")
 		p.Menu()
 
 	case 5:
-		p.BuySkill(150,"Boule de foudre")
+		p.BuySkill(150, "Boule de foudre")
 		p.Menu()
 
 	case 6:
 		fmt.Println("Combien de tissus voulez vous acheter ?")
 		fmt.Scanln(&NBR)
-		p.BuySeveralItem(2,NBR,"tissu")
+		p.BuySeveralItem(2, NBR, "tissu")
 		p.Menu()
 
 	case 7:
 		fmt.Println("Combien de cuir voulez vous acheter ?")
 		fmt.Scanln(&NBR)
-		p.BuySeveralItem(4,NBR,"cuir")
+		p.BuySeveralItem(4, NBR, "cuir")
 		p.Menu()
 
 	case 8:
@@ -61,9 +61,5 @@ func (p *Personnage) Shop() {
 		fmt.Println("Vous n'avez pas choisi une option valide")
 		p.Menu()
 
-	
-	
-	
-	
 	}
 }

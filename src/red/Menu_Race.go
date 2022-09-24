@@ -6,6 +6,7 @@ func (p *Personnage) Menu_Race() {
 	var result int
 	var retour int
 
+	fmt.Println("Il existe aussi des classes qui possèdent des forces et les faiblesses contre différent type de créature")
 	fmt.Println("Choissisez votre Race parmi: ")
 	fmt.Println("1- Elfes")
 	fmt.Println("2- Orcs")
@@ -17,7 +18,7 @@ func (p *Personnage) Menu_Race() {
 	fmt.Scanln(&result)
 	switch result {
 	case 1:
-		fmt.Println("Vous avez choisi les Elfes")
+		fmt.Println("Vous avez choisi la race des Elfes")
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
 		p.Elfe()
@@ -36,7 +37,7 @@ func (p *Personnage) Menu_Race() {
 		}
 
 	case 2:
-		fmt.Println("Vous avez choisi les Orcs")
+		fmt.Println("Vous avez choisi la race des Orcs")
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
 		p.Orc()
@@ -54,7 +55,7 @@ func (p *Personnage) Menu_Race() {
 			p.Menu_Race()
 		}
 	case 3:
-		fmt.Println("Vous avez choisi les Demons")
+		fmt.Println("Vous avez choisi la race des Demons")
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
 		p.Demon()
@@ -72,7 +73,7 @@ func (p *Personnage) Menu_Race() {
 			p.Menu_Race()
 		}
 	case 4:
-		fmt.Println("Vous avez choisi les Humains")
+		fmt.Println("Vous avez choisi la race des Humains")
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
 		p.Humain()
@@ -90,7 +91,7 @@ func (p *Personnage) Menu_Race() {
 			p.Menu_Race()
 		}
 	case 5:
-		fmt.Println("Vous avez choisi les Nains")
+		fmt.Println("Vous avez choisi la Nains")
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
 		p.Nain()
@@ -106,18 +107,14 @@ func (p *Personnage) Menu_Race() {
 			break
 		case 2:
 			p.Menu_Race()
-		
 
 		default:
 			fmt.Println("Vous n'avez pas choisi de Race")
 			p.Menu_Race()
 
-		
-
 		}
 
-
-	default :
+	default:
 		p.Menu_Race()
 	}
 }

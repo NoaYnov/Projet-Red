@@ -6,7 +6,9 @@ func (p *Personnage) Menu_Classe() {
 	var result1 int
 	var retour8 int
 
-	fmt.Println("Choissisez votre Classe parmi: ")
+	fmt.Println("Chaque personnage est propre à votre personnalité, les classes sont une des personnalisations de nomdujeux.")
+	fmt.Println("N'oublier pas de regarder les caractéristiques de chaque personnage pour choisir celui qui vous corespond le mieux !")
+	fmt.Println("Voici les classes disponible: ")
 	fmt.Println("1- Berserk")
 	fmt.Println("2- Mage")
 	fmt.Println("3- Paladin")
@@ -112,10 +114,10 @@ func (p *Personnage) Menu_Classe() {
 			fmt.Println("Vous n'avez pas choisi de classe")
 			p.Menu_Classe()
 		}
-	
+
 	default:
 		fmt.Println("Vous n'avez pas choisi de classe")
 		p.Menu_Classe()
-	
+
 	}
 }

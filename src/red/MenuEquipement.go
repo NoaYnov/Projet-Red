@@ -1,16 +1,18 @@
 package red
+
 import "fmt"
 
-func (p *Personnage) MenuEquipement(){
-	
+func (p *Personnage) MenuEquipement() {
+
 	p.AccessAllArmor()
-	
+
 	var ts int
 	fmt.Println("1- Equiper un casque")
 	fmt.Println("2. Equiper des bottes")
 	fmt.Println("3. Equiper des gants")
 	fmt.Println("4. Equiper un pantalon")
 	fmt.Println("5. Equiper un plastron")
+	fmt.Printf("\n")
 	fmt.Println("6- Retour")
 	fmt.Scanln(&ts)
 	switch ts {
@@ -36,7 +38,7 @@ func (p *Personnage) MenuEquipement(){
 	}
 }
 
-func (p *Personnage) EquipBoots(){
+func (p *Personnage) EquipBoots() {
 	fmt.Println("________________________________________________")
 	fmt.Println(p.armor.boots)
 	fmt.Println("________________________________________________")
@@ -50,21 +52,20 @@ func (p *Personnage) EquipBoots(){
 	switch ts2 {
 	case "retour":
 		p.MenuEquipement()
-	case "bottes":
+	case "Chaussures":
 		p.equipboots = p.armor.boots[0]
 		fmt.Println("Vous avez équipé", p.equipboots)
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
 		p.MenuEquipement()
 
-	case "Bottes_de_l’aventurier":
+	case "Bottes":
 		p.equipboots = p.armor.boots[1]
 		fmt.Println("Vous avez équipé", p.equipboots)
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
 		p.MenuEquipement()
 
-		
 	default:
 		fmt.Println("________________________________________________")
 		fmt.Println("Vous n'avez pas d'autre equipement à équiper")
@@ -72,7 +73,7 @@ func (p *Personnage) EquipBoots(){
 
 	}
 }
-func (p *Personnage) EquipHelmet(){
+func (p *Personnage) EquipHelmet() {
 	fmt.Println("________________________________________________")
 	fmt.Println(p.armor.helmet)
 	fmt.Println("________________________________________________")
@@ -86,21 +87,20 @@ func (p *Personnage) EquipHelmet(){
 	switch ts2 {
 	case "retour":
 		p.MenuEquipement()
-	case "bonnet":
+	case "Bonnet":
 		p.equiphelmet = p.armor.helmet[0]
 		fmt.Println("Vous avez équipé", p.equiphelmet)
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
 		p.MenuEquipement()
 
-	case "Chapeau_de_l’aventurier":
+	case "Casque":
 		p.equiphelmet = p.armor.helmet[1]
 		fmt.Println("Vous avez équipé", p.equiphelmet)
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
 		p.MenuEquipement()
 
-		
 	default:
 		fmt.Println("________________________________________________")
 		fmt.Println("Vous n'avez pas d'autre equipement à équiper")
@@ -109,7 +109,7 @@ func (p *Personnage) EquipHelmet(){
 	}
 }
 
-func (p *Personnage) EquipGloves(){
+func (p *Personnage) EquipGloves() {
 	fmt.Println("________________________________________________")
 	fmt.Println(p.armor.gloves)
 	fmt.Println("________________________________________________")
@@ -123,21 +123,20 @@ func (p *Personnage) EquipGloves(){
 	switch ts2 {
 	case "retour":
 		p.MenuEquipement()
-	case "gants":
+	case "Gants":
 		p.equipgloves = p.armor.gloves[0]
 		fmt.Println("Vous avez équipé", p.equipgloves)
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
 		p.MenuEquipement()
 
-	case "Gants_de_l’aventurier":
+	case "Gantlets":
 		p.equipgloves = p.armor.gloves[1]
 		fmt.Println("Vous avez équipé", p.equipgloves)
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
 		p.MenuEquipement()
 
-		
 	default:
 		fmt.Println("________________________________________________")
 		fmt.Println("Vous n'avez pas d'autre equipement à équiper")
@@ -146,7 +145,7 @@ func (p *Personnage) EquipGloves(){
 	}
 }
 
-func (p *Personnage) EquipPants(){
+func (p *Personnage) EquipPants() {
 	fmt.Println("________________________________________________")
 	fmt.Println(p.armor.pants)
 	fmt.Println("________________________________________________")
@@ -160,21 +159,20 @@ func (p *Personnage) EquipPants(){
 	switch ts2 {
 	case "retour":
 		p.MenuEquipement()
-	case "pantalon":
+	case "Pantalon":
 		p.equippants = p.armor.pants[0]
 		fmt.Println("Vous avez équipé", p.equippants)
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
 		p.MenuEquipement()
 
-	case "Pantalon_de_l’aventurier":
+	case "Jambieres":
 		p.equippants = p.armor.pants[1]
 		fmt.Println("Vous avez équipé", p.equippants)
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
 		p.MenuEquipement()
 
-		
 	default:
 		fmt.Println("________________________________________________")
 		fmt.Println("Vous n'avez pas d'autre equipement à équiper")
@@ -183,7 +181,7 @@ func (p *Personnage) EquipPants(){
 	}
 }
 
-func (p *Personnage) EquipChest(){
+func (p *Personnage) EquipChest() {
 	fmt.Println("________________________________________________")
 	fmt.Println(p.armor.chestplate)
 	fmt.Println("________________________________________________")
@@ -197,21 +195,20 @@ func (p *Personnage) EquipChest(){
 	switch ts2 {
 	case "retour":
 		p.MenuEquipement()
-	case "tunique":
+	case "Tunique":
 		p.equipchestplate = p.armor.chestplate[0]
 		fmt.Println("Vous avez équipé", p.equipchestplate)
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
 		p.MenuEquipement()
 
-	case "Plastron_de_l’aventurier":
+	case "Plastron":
 		p.equipchestplate = p.armor.chestplate[1]
 		fmt.Println("Vous avez équipé", p.equipchestplate)
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
 		p.MenuEquipement()
 
-		
 	default:
 		fmt.Println("________________________________________________")
 		fmt.Println("Vous n'avez pas d'autre equipement à équiper")

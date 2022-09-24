@@ -1,9 +1,11 @@
 package red
+
 import "fmt"
+
 func (p *Personnage) Forge() {
 	var result0 int
-	fmt.Println("Bienvenue dans la forge")
-	fmt.Printf("Vous avez")
+	fmt.Println("Bienvenue dans la forge, vous pourrez y fabriquer différent objet pour amélioré votre équipement")
+	fmt.Printf("Vous possédez")
 	p.AccessInventory()
 	p.AccessMoney()
 	fmt.Println("Que voulez vous fabriquer ?")
@@ -16,19 +18,19 @@ func (p *Personnage) Forge() {
 	fmt.Scanln(&result0)
 	switch result0 {
 	case 1:
-		p.CraftForgeHelmet(10,"tissu",1,"cuir",2,"Chapeau_de_l’aventurier")
+		p.CraftForgeHelmet(10, "tissu", 1, "cuir", 2, "Casque")
 		p.Menu()
 	case 2:
-		p.CraftForgeBoots(8,"tissu",2,"cuir",1,"Bottes_de_l’aventurier")
+		p.CraftForgeBoots(8, "tissu", 2, "cuir", 1, "Bottes")
 		p.Menu()
 	case 3:
-		p.CraftForgeGloves(3,"tissu",3,"cuir",1,"Gants_de_l’aventurier")
+		p.CraftForgeGloves(3, "tissu", 3, "cuir", 1, "Gantlets")
 		p.Menu()
 	case 4:
-		p.CraftForgePants(10,"tissu",4,"cuir",4,"Pantalon_de_l’aventurier")
+		p.CraftForgePants(10, "tissu", 4, "cuir", 4, "Jambieres")
 		p.Menu()
 	case 5:
-		p.CraftForgeChestplate(25,"tissu",8,"cuir",6,"Plastron_de_l’aventurier")
+		p.CraftForgeChestplate(25, "tissu", 8, "cuir", 6, "Plastron")
 		p.Menu()
 
 	case 6:
@@ -41,98 +43,107 @@ func (p *Personnage) Forge() {
 	}
 }
 
-
-func (p *Personnage) CraftForgeHelmet(money int,ressource1 string, nbr1 int, ressource2 string,nbr2 int,item string){
+func (p *Personnage) CraftForgeHelmet(money int, ressource1 string, nbr1 int, ressource2 string, nbr2 int, item string) {
 	if p.TestLenAddArmor(item) == false {
 		fmt.Println("Inventaire d'armure plein")
 	} else if p.TestItemAddArmor(item) == false {
 		fmt.Println("Vous avez déjà fabriqué cet objet")
 	} else if p.TestRemoveMoney(money) == false {
 		fmt.Println("Vous n'avez pas assez d'argent")
-	}else if p.TestRemoveInventory(nbr1,ressource1) == false {
-		fmt.Println("Vous n'avez pas assez de",ressource1)
-	}else if p.TestRemoveInventory(nbr2,ressource2) == false {
-		fmt.Println("Vous n'avez pas assez de",ressource2)
-	}else{  p.RemoveMoney(money)
-			p.RemoveInventoryNbr(nbr1,ressource1)
-			p.RemoveInventoryNbr(nbr2,ressource2)
-			p.AddHelmet(item)
-			fmt.Println("Vous avez fabriqué : ",item)}
+	} else if p.TestRemoveInventory(nbr1, ressource1) == false {
+		fmt.Println("Vous n'avez pas assez de", ressource1)
+	} else if p.TestRemoveInventory(nbr2, ressource2) == false {
+		fmt.Println("Vous n'avez pas assez de", ressource2)
+	} else {
+		p.RemoveMoney(money)
+		p.RemoveInventoryNbr(nbr1, ressource1)
+		p.RemoveInventoryNbr(nbr2, ressource2)
+		p.AddHelmet(item)
+		fmt.Println("Vous avez fabriqué : ", item)
+	}
 
 }
 
-func (p *Personnage) CraftForgeBoots(money int,ressource1 string, nbr1 int, ressource2 string,nbr2 int,item string){
-	if p.TestLenAddArmor(item) == false {
-		fmt.Println("Inventaire d'armure plein")
-	} else if p.TestItemAddArmor(item) == false {
-		fmt.Println("Vous avez déjà fabriqué cet objet")
-	}else if p.TestRemoveMoney(money) == false {
-		fmt.Println("Vous n'avez pas assez d'argent")
-	}else if p.TestRemoveInventory(nbr1,ressource1) == false {
-		fmt.Println("Vous n'avez pas assez de",ressource1)
-	}else if p.TestRemoveInventory(nbr2,ressource2) == false {
-		fmt.Println("Vous n'avez pas assez de",ressource2)
-	}else{  p.RemoveMoney(money)
-			p.RemoveInventoryNbr(nbr1,ressource1)
-			p.RemoveInventoryNbr(nbr2,ressource2)
-			p.AddBoots(item)
-			fmt.Println("Vous avez fabriqué : ",item)}
-
-}
-
-func (p *Personnage) CraftForgeGloves(money int,ressource1 string, nbr1 int, ressource2 string,nbr2 int,item string){
+func (p *Personnage) CraftForgeBoots(money int, ressource1 string, nbr1 int, ressource2 string, nbr2 int, item string) {
 	if p.TestLenAddArmor(item) == false {
 		fmt.Println("Inventaire d'armure plein")
 	} else if p.TestItemAddArmor(item) == false {
 		fmt.Println("Vous avez déjà fabriqué cet objet")
 	} else if p.TestRemoveMoney(money) == false {
 		fmt.Println("Vous n'avez pas assez d'argent")
-	}else if p.TestRemoveInventory(nbr1,ressource1) == false {
-		fmt.Println("Vous n'avez pas assez de",ressource1)
-	}else if p.TestRemoveInventory(nbr2,ressource2) == false {
-		fmt.Println("Vous n'avez pas assez de",ressource2)
-	}else{  p.RemoveMoney(money)
-			p.RemoveInventoryNbr(nbr1,ressource1)
-			p.RemoveInventoryNbr(nbr2,ressource2)
-			p.AddGloves(item)
-			fmt.Println("Vous avez fabriqué : ",item)}
+	} else if p.TestRemoveInventory(nbr1, ressource1) == false {
+		fmt.Println("Vous n'avez pas assez de", ressource1)
+	} else if p.TestRemoveInventory(nbr2, ressource2) == false {
+		fmt.Println("Vous n'avez pas assez de", ressource2)
+	} else {
+		p.RemoveMoney(money)
+		p.RemoveInventoryNbr(nbr1, ressource1)
+		p.RemoveInventoryNbr(nbr2, ressource2)
+		p.AddBoots(item)
+		fmt.Println("Vous avez fabriqué : ", item)
+	}
 
 }
 
-func (p *Personnage) CraftForgePants(money int,ressource1 string, nbr1 int, ressource2 string,nbr2 int,item string){
+func (p *Personnage) CraftForgeGloves(money int, ressource1 string, nbr1 int, ressource2 string, nbr2 int, item string) {
 	if p.TestLenAddArmor(item) == false {
 		fmt.Println("Inventaire d'armure plein")
 	} else if p.TestItemAddArmor(item) == false {
 		fmt.Println("Vous avez déjà fabriqué cet objet")
 	} else if p.TestRemoveMoney(money) == false {
 		fmt.Println("Vous n'avez pas assez d'argent")
-	}else if p.TestRemoveInventory(nbr1,ressource1) == false {
-		fmt.Println("Vous n'avez pas assez de",ressource1)
-	}else if p.TestRemoveInventory(nbr2,ressource2) == false {
-		fmt.Println("Vous n'avez pas assez de",ressource2)
-	}else{  p.RemoveMoney(money)
-			p.RemoveInventoryNbr(nbr1,ressource1)
-			p.RemoveInventoryNbr(nbr2,ressource2)
-			p.AddPants(item)
-			fmt.Println("Vous avez fabriqué : ",item)}
+	} else if p.TestRemoveInventory(nbr1, ressource1) == false {
+		fmt.Println("Vous n'avez pas assez de", ressource1)
+	} else if p.TestRemoveInventory(nbr2, ressource2) == false {
+		fmt.Println("Vous n'avez pas assez de", ressource2)
+	} else {
+		p.RemoveMoney(money)
+		p.RemoveInventoryNbr(nbr1, ressource1)
+		p.RemoveInventoryNbr(nbr2, ressource2)
+		p.AddGloves(item)
+		fmt.Println("Vous avez fabriqué : ", item)
+	}
 
 }
 
-func (p *Personnage) CraftForgeChestplate(money int,ressource1 string, nbr1 int, ressource2 string,nbr2 int,item string){
+func (p *Personnage) CraftForgePants(money int, ressource1 string, nbr1 int, ressource2 string, nbr2 int, item string) {
 	if p.TestLenAddArmor(item) == false {
 		fmt.Println("Inventaire d'armure plein")
 	} else if p.TestItemAddArmor(item) == false {
 		fmt.Println("Vous avez déjà fabriqué cet objet")
 	} else if p.TestRemoveMoney(money) == false {
 		fmt.Println("Vous n'avez pas assez d'argent")
-	}else if p.TestRemoveInventory(nbr1,ressource1) == false {
-		fmt.Println("Vous n'avez pas assez de",ressource1)
-	}else if p.TestRemoveInventory(nbr2,ressource2) == false {
-		fmt.Println("Vous n'avez pas assez de",ressource2)
-	}else{  p.RemoveMoney(money)
-			p.RemoveInventoryNbr(nbr1,ressource1)
-			p.RemoveInventoryNbr(nbr2,ressource2)
-			p.AddChestplate(item)
-			fmt.Println("Vous avez fabriqué : ",item)}
+	} else if p.TestRemoveInventory(nbr1, ressource1) == false {
+		fmt.Println("Vous n'avez pas assez de", ressource1)
+	} else if p.TestRemoveInventory(nbr2, ressource2) == false {
+		fmt.Println("Vous n'avez pas assez de", ressource2)
+	} else {
+		p.RemoveMoney(money)
+		p.RemoveInventoryNbr(nbr1, ressource1)
+		p.RemoveInventoryNbr(nbr2, ressource2)
+		p.AddPants(item)
+		fmt.Println("Vous avez fabriqué : ", item)
+	}
+
+}
+
+func (p *Personnage) CraftForgeChestplate(money int, ressource1 string, nbr1 int, ressource2 string, nbr2 int, item string) {
+	if p.TestLenAddArmor(item) == false {
+		fmt.Println("Inventaire d'armure plein")
+	} else if p.TestItemAddArmor(item) == false {
+		fmt.Println("Vous avez déjà fabriqué cet objet")
+	} else if p.TestRemoveMoney(money) == false {
+		fmt.Println("Vous n'avez pas assez d'argent")
+	} else if p.TestRemoveInventory(nbr1, ressource1) == false {
+		fmt.Println("Vous n'avez pas assez de", ressource1)
+	} else if p.TestRemoveInventory(nbr2, ressource2) == false {
+		fmt.Println("Vous n'avez pas assez de", ressource2)
+	} else {
+		p.RemoveMoney(money)
+		p.RemoveInventoryNbr(nbr1, ressource1)
+		p.RemoveInventoryNbr(nbr2, ressource2)
+		p.AddChestplate(item)
+		fmt.Println("Vous avez fabriqué : ", item)
+	}
 
 }
