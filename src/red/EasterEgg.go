@@ -1,7 +1,7 @@
 package red
 
 func (p *Personnage) SUS(){
-	p.inventaire = map[string]int{"potion de vie": 999, "Main de Dieu": 1,"tissu": 300,"cuir":300}
+	p.inventaire = map[string]int{"potion de vie": 999, "Main de Dieu": 1,"tissu": 300}
 	p.classe = "XXgameurXX"
 	p.race = "GIGA CHAD"
 	p.niveau = 1
@@ -11,4 +11,5 @@ func (p *Personnage) SUS(){
 	p.resistance_physique = 9999999999
 	p.resistance_magique = 9999999999
 	p.inventaireArmor = map[string]string{"Bonnet": "Helmet"}
+	p.money = 9999999999
 }

@@ -57,7 +57,7 @@ func (p *Personnage) Menu() {
 			p.Menu()
 
 		case 2:
-			p.PoisonPot()
+			p.SelfPoisonPot()
 			fmt.Println(p.point_de_vie_actuel)
 			p.Menu()
 
@@ -81,17 +81,12 @@ func (p *Personnage) Menu() {
 	case 4:
 		fmt.Printf("\n")
 		p.DisplaySkill()
-		fmt.Println("1- Description des sorts")
-		fmt.Println("2- Retour")
+		fmt.Println("1- Retour")
 		fmt.Println("________________________________________________")
 		fmt.Scanln(&retour)
 		switch retour {
 		case 1:
-			// p.Description()
-			fmt.Println("lil")
-			personnage.Menu()
 
-		case 2:
 			personnage.Menu()
 
 		}
@@ -108,6 +103,7 @@ func (p *Personnage) Menu() {
 	case 8:
 		fmt.Println("ALT+F4")
 		return
+
 
 	default:
 		fmt.Println(retour)

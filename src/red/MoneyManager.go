@@ -23,14 +23,14 @@ func (p *Personnage) TestRemoveMoney(amount int) bool {
 	}
 }
 
-func (p *Personnage) BuySkill(money int, skill string) {
+func (p *Personnage) BuySkill(money int, skill string, degats int) {
 	if p.TestAddSkill(skill) == false {
 		fmt.Println("Vous avez déjà ce skill")
 	} else if p.TestRemoveMoney(money) == false {
 		fmt.Println("Vous n'avez pas assez d'argent")
 	} else {
 		p.RemoveMoney(money)
-		p.AddSkill(skill)
+		p.AddSkill(skill, degats)
 		fmt.Println("Vous avez appris le", skill)
 	}
 }

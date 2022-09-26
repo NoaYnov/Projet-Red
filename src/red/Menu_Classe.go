@@ -35,6 +35,10 @@ func (p *Personnage) Menu_Classe() {
 			break
 		case 2:
 			p.Menu_Classe()
+
+		default:
+			fmt.Println("Vous n'avez pas choisi de classe")
+			p.Menu_Classe()
 		}
 
 	case 2:
@@ -54,6 +58,10 @@ func (p *Personnage) Menu_Classe() {
 			break
 		case 2:
 			p.Menu_Classe()
+
+		default:
+			fmt.Println("Vous n'avez pas choisi de classe")
+			p.Menu_Classe()
 		}
 	case 3:
 		fmt.Println("Vous avez choisi les Paladin")
@@ -72,6 +80,10 @@ func (p *Personnage) Menu_Classe() {
 			break
 		case 2:
 			p.Menu_Classe()
+
+		default:
+			fmt.Println("Vous n'avez pas choisi de classe")
+			p.Menu_Classe()
 		}
 	case 4:
 		fmt.Println("Vous avez choisi les Voleur")
@@ -89,6 +101,10 @@ func (p *Personnage) Menu_Classe() {
 			classe = "Voleur"
 			break
 		case 2:
+			p.Menu_Classe()
+
+		default:
+			fmt.Println("Vous n'avez pas choisi de classe")
 			p.Menu_Classe()
 		}
 	case 5:

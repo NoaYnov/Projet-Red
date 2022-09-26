@@ -64,15 +64,17 @@ func (p *Personnage) EquipBoots() {
 		fmt.Println("Vous avez équipé", p.equipboots)
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
+		p.TestEquipement()
 		p.MenuEquipement()
-
 	default:
 		fmt.Println("________________________________________________")
 		fmt.Println("Vous n'avez pas d'autre equipement à équiper")
 		p.MenuEquipement()
 
 	}
+	p.TestEquipement()
 }
+
 func (p *Personnage) EquipHelmet() {
 	fmt.Println("________________________________________________")
 	fmt.Println(p.armor.helmet)
@@ -99,14 +101,16 @@ func (p *Personnage) EquipHelmet() {
 		fmt.Println("Vous avez équipé", p.equiphelmet)
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
+		p.TestEquipement()
 		p.MenuEquipement()
-
 	default:
 		fmt.Println("________________________________________________")
 		fmt.Println("Vous n'avez pas d'autre equipement à équiper")
 		p.MenuEquipement()
 
 	}
+	p.TestEquipement()
+
 }
 
 func (p *Personnage) EquipGloves() {
@@ -135,14 +139,16 @@ func (p *Personnage) EquipGloves() {
 		fmt.Println("Vous avez équipé", p.equipgloves)
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
+		p.TestEquipement()
 		p.MenuEquipement()
-
 	default:
 		fmt.Println("________________________________________________")
 		fmt.Println("Vous n'avez pas d'autre equipement à équiper")
 		p.MenuEquipement()
 
 	}
+	p.TestEquipement()
+
 }
 
 func (p *Personnage) EquipPants() {
@@ -171,14 +177,16 @@ func (p *Personnage) EquipPants() {
 		fmt.Println("Vous avez équipé", p.equippants)
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
+		p.TestEquipement()
 		p.MenuEquipement()
-
 	default:
 		fmt.Println("________________________________________________")
 		fmt.Println("Vous n'avez pas d'autre equipement à équiper")
 		p.MenuEquipement()
 
 	}
+	p.TestEquipement()
+
 }
 
 func (p *Personnage) EquipChest() {
@@ -207,12 +215,35 @@ func (p *Personnage) EquipChest() {
 		fmt.Println("Vous avez équipé", p.equipchestplate)
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
+		p.TestEquipement()
 		p.MenuEquipement()
 
+		
 	default:
 		fmt.Println("________________________________________________")
 		fmt.Println("Vous n'avez pas d'autre equipement à équiper")
 		p.MenuEquipement()
 
 	}
+	
+
+}
+
+func (p *Personnage) TestEquipement() {
+	if p.equipboots == "Bottes" {
+		p.point_de_vie_max += 5
+	}
+	if p.equipchestplate == "Plastron" {
+		p.point_de_vie_max += 20
+	}
+	if p.equiphelmet == "Casque" {
+		p.point_de_vie_max += 15
+	}
+	if p.equippants == "Jambieres" {
+		p.point_de_vie_max += 10
+	}
+	if p.equipgloves == "Gantlets" {
+		p.force += 10
+	}
+
 }

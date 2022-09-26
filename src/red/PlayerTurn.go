@@ -6,7 +6,18 @@ import (
 
 func (p *Personnage) Playerturn() {
 	var choix int
+	fmt.Printf("\n")
+	fmt.Printf("\n")
+	fmt.Printf("\n")
+
+	fmt.Println("__________________________________________________")
+	fmt.Printf("\n")
 	fmt.Println("C'est votre tour")
+	fmt.Printf("\n")
+	fmt.Println("__________________________________________________")
+
+
+
 	fmt.Println("Que voulez vous faire?")
 	fmt.Println("1-Attaquer")
 	fmt.Println("2-Utiliser un sort")
@@ -22,50 +33,37 @@ func (p *Personnage) Playerturn() {
 		fmt.Println("PV du gobelin:", p.goblin.point_de_vie_actuel, "/", p.goblin.point_de_vie_max)
 	case 2:
 		fmt.Println("Quel sort voulez vous utiliser?")
-		fmt.Println("1-boule de Feu")
-		fmt.Println("2-boude de glace")
-		fmt.Println("3-boude de foudre")
-		fmt.Scanln(choix)
+		fmt.Println("1-Coup de poing")
+		fmt.Println("2-Boule de Feu")
+		fmt.Println("3-Boule de glace")
+		fmt.Println("4-Boule de foudre")
+		fmt.Scanln(&choix)
 		switch choix {
 		case 1:
-			// p.goblin.point_de_vie_actuel -= p.boule_de_feu
-			if p.goblin.point_de_vie_actuel <= 0 {
-				p.goblin.point_de_vie_actuel = 0
-			}
-			fmt.Println("Vous avez utilisé Boule de feu")
-			fmt.Println("Vous avez infligé", p.force, "points de degats")
-			fmt.Println("PV du gobelin:", p.goblin.point_de_vie_actuel, "/", p.goblin.point_de_vie_max)
+			p.UseSkill("Coup de poing")
 		case 2:
-			// p.goblin.point_de_vie_actuel -= p.boule_de_glace
-			if p.goblin.point_de_vie_actuel <= 0 {
-				p.goblin.point_de_vie_actuel = 0
-			}
-			fmt.Println("Vous avez utilisé Boule de glace")
-			fmt.Println("Vous avez infligé", p.force, "points de degats")
-			fmt.Println("PV du gobelin:", p.goblin.point_de_vie_actuel, "/", p.goblin.point_de_vie_max)
+			p.UseSkill("Boule de feu")
 		case 3:
-			// p.goblin.point_de_vie_actuel -= p.boule_de_foudre
-			if p.goblin.point_de_vie_actuel <= 0 {
-				p.goblin.point_de_vie_actuel = 0
-			}
-			fmt.Println("Vous avez utilisé Boule de foudre")
-			fmt.Println("Vous avez infligé", p.force, "points de degats")
-			fmt.Println("PV du gobelin:", p.goblin.point_de_vie_actuel, "/", p.goblin.point_de_vie_max)
+			p.UseSkill("Boule de glace")
+		case 4:
+			p.UseSkill("Boule de foudre")
+
+		default:
+			fmt.Println("Vous n'avez pas choisi une option valide")
+			p.Playerturn()
 		}
+	
 
 	case 3:
 		fmt.Println("Quel objet voulez vous utiliser?")
 		fmt.Println("1-Potion de vie")
 		fmt.Println("2-Potion de poison")
-		fmt.Scanln(choix)
+		fmt.Scanln(&choix)
 		switch choix {
 		case 1:
-			p.point_de_vie_actuel += 25
-			fmt.Println("Vous avez utilisé une potion de soin")
-			fmt.Println("Vous avez regagné 25 points de vie")
-			fmt.Println("Vous avez", p.point_de_vie_actuel, "points de vie")
+			p.TakePotHeal()
 		case 2:
-			fmt.Println("Vous avez utilisé une potion de poison")
+			fmt.Println("Vous avez utilisé une potion de poison sur l'ennemi")
 		}
 
 	default:

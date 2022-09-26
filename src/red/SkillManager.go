@@ -1,34 +1,51 @@
 package red
 
-func (p *Personnage) AddSkill(skill string) {
-	p.skill = append(p.skill, skill)
-}
+import "fmt"
 
-func (p *Personnage) RemoveSkill(skill string) {
-	for i, v := range p.skill {
-		if v == skill {
-			p.skill = append(p.skill[:i], p.skill[i+1:]...)
-		}
+func (p *Personnage) AddSkill(skill string, degats int) {
+	if p.TestAddSkill(skill) == true {
+		p.skill[skill] = degats
 	}
 }
+
 
 func (p *Personnage) DisplaySkill() {
-	if len(p.skill) == 0 {
-		p.AddSkill("Coup de poing")
-		
-
+	for k, v := range p.skill {
+		println(k,":", v)
 	}
-	for _, v := range p.skill {
-		println(v)
-	}
-println("\n")
 }
 
 func (p *Personnage) TestAddSkill(skill string) bool {
-	for _, v := range p.skill {
+	for v, _ := range p.skill {
 		if v == skill {
 			return false
 		}
 	}
 	return true
+}
+
+
+
+func (p *Personnage) TestRemoveSkill(skill string) bool {
+	for v, _:= range p.skill {
+		if v == skill {
+			return true
+		}
+	}
+	return false
+}
+
+func (p *Personnage) UseSkill(skill string) {
+	if p.TestRemoveSkill(skill) == true {
+		p.goblin.point_de_vie_actuel -= p.skill[skill]
+		if p.goblin.point_de_vie_actuel <= 0 {
+			p.goblin.point_de_vie_actuel = 0
+		}
+		fmt.Println("Vous avez utilisé ", skill)
+		fmt.Println("Vous avez infligé", p.skill[skill], "points de degats")
+		fmt.Println("PV du gobelin:", p.goblin.point_de_vie_actuel, "/", p.goblin.point_de_vie_max)
+	} else {
+		fmt.Println("Vous n'avez pas ce sort")
+		p.Playerturn()
+	}
 }

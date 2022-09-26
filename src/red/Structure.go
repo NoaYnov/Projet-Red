@@ -20,7 +20,7 @@ type Personnage struct {
 	point_de_vie_actuel int
 	resistance_physique int
 	resistance_magique  int
-	skill               []string
+	skill               map[string]int
 	inventaire          map[string]int
 	inventaireArmor     map[string]string
 	money               int
@@ -30,9 +30,12 @@ type Personnage struct {
 	equippants          string
 	equipboots          string
 	equipgloves         string
+	liminventaire	    int
+	limslot 		    int
 	goblin              Mob
 	vers_geant          Mob
 	troll               Mob
+
 }
 
 type Armor struct {

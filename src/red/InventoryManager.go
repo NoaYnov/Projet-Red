@@ -31,7 +31,7 @@ func (p *Personnage) RemoveInventoryNbr(nbr int,item string){
 }
 
 func (p *Personnage) TestAddInventory(item string)bool{
-    if len(p.inventaire) >= 15 || p.inventaire[item] >= 10 {
+    if len(p.inventaire) >= p.liminventaire || p.inventaire[item] >= p.limslot {
         return false
     }else{
         return true
@@ -48,7 +48,7 @@ func (p *Personnage) TestRemoveInventory(nbr int,item string)bool{
 
 
 func (p *Personnage) TestAddInventoryNbr(nbr int,item string)bool{
-    if len(p.inventaire) >= 15 || p.inventaire[item] >= 10-nbr {
+    if len(p.inventaire) >= p.liminventaire || p.inventaire[item] > p.limslot-nbr {
         return false
     }else{
         return true

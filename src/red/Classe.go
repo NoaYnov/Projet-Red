@@ -1,13 +1,13 @@
 package red
 
 func (p *Personnage) Berserk() {
-	p.inventaire = map[string]int{"potion de vie": 9, "Hache": 1}
+	p.inventaire = map[string]int{"potion de vie": 9, "Hache de lancer": 1}
 	p.classe = "Berserk"
 
 }
 
 func (p *Personnage) Paladin() {
-	p.inventaire = map[string]int{"potion de vie": 3, "epee": 1}
+	p.inventaire = map[string]int{"potion de vie": 3, "lance": 1}
 	p.classe = "Paladin"
 }
 

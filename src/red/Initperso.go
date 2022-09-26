@@ -10,6 +10,9 @@ var classe string
 
 func (p *Personnage) InitPerso() {
 	p.money = 100
+	p.liminventaire = 15
+	p.limslot = 10
+	p.skill = map[string]int{"Coup de poing":10}
 
 	p.armor.helmet = []string{"Bonnet"}
 	p.armor.boots = []string{"Chaussures"}

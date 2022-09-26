@@ -15,7 +15,9 @@ func (p *Personnage) Shop() {
 	fmt.Println("5- spellBook : Boule de foudre : 150 pièces")
 	fmt.Println("6- Tissus : 2 pièces/unité")
 	fmt.Println("7- Cuir : 4 pièces/unité")
-	fmt.Println("8- Retour")
+	fmt.Println("8- Limite d'invetaire + 10 : 500 pièces")
+	fmt.Println("9- Limite de Slot + 10 : 1000 pièces")
+	fmt.Println("10- Retour")
 	fmt.Scanln(&result7)
 	switch result7 {
 	case 1:
@@ -31,15 +33,15 @@ func (p *Personnage) Shop() {
 		p.Menu()
 
 	case 3:
-		p.BuySkill(25, "Boule de feu")
+		p.BuySkill(25, "Boule de feu", 40)
 		p.Menu()
 
 	case 4:
-		p.BuySkill(40, "Boule de glace")
+		p.BuySkill(40, "Boule de glace", 75)
 		p.Menu()
 
 	case 5:
-		p.BuySkill(150, "Boule de foudre")
+		p.BuySkill(150, "Boule de foudre", 500)
 		p.Menu()
 
 	case 6:
@@ -54,7 +56,28 @@ func (p *Personnage) Shop() {
 		p.BuySeveralItem(4, NBR, "cuir")
 		p.Menu()
 
+	
+
 	case 8:
+		if p.TestRemoveMoney(500) == true {
+			p.liminventaire += 10
+			p.RemoveMoney(500)
+			fmt.Println("Vous avez maintenant", p.liminventaire, "place dans votre inventaire")
+		} else { fmt.Println("Vous n'avez pas assez d'argent") }
+		p.Menu()
+
+		
+
+	case 9:
+		if p.TestRemoveMoney(1000) == true {
+			p.limslot += 10
+			p.RemoveMoney(1000)
+			fmt.Println("Vous avez maintenant", p.limslot, "place dans chaque Slot de votre inventaire")
+		} else { fmt.Println("Vous n'avez pas assez d'argent") }
+		p.Menu()
+		
+
+	case 10:
 		p.Menu()
 
 	default:

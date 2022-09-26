@@ -34,6 +34,10 @@ func (p *Personnage) Menu_Race() {
 			break
 		case 2:
 			p.Menu_Race()
+
+		default:
+			fmt.Println("Vous n'avez pas choisi de Race")
+			p.Menu_Race()
 		}
 
 	case 2:
@@ -53,6 +57,10 @@ func (p *Personnage) Menu_Race() {
 			break
 		case 2:
 			p.Menu_Race()
+
+		default:
+			fmt.Println("Vous n'avez pas choisi de Race")
+			p.Menu_Race()
 		}
 	case 3:
 		fmt.Println("Vous avez choisi la race des Demons")
@@ -70,6 +78,10 @@ func (p *Personnage) Menu_Race() {
 			race = "Demon"
 			break
 		case 2:
+			p.Menu_Race()
+
+		default:
+			fmt.Println("Vous n'avez pas choisi de Race")
 			p.Menu_Race()
 		}
 	case 4:
@@ -89,6 +101,12 @@ func (p *Personnage) Menu_Race() {
 			break
 		case 2:
 			p.Menu_Race()
+
+		default:
+			fmt.Println("Vous n'avez pas choisi de Race")
+			p.Menu_Race()
+
+		
 		}
 	case 5:
 		fmt.Println("Vous avez choisi la Nains")
@@ -115,6 +133,7 @@ func (p *Personnage) Menu_Race() {
 		}
 
 	default:
+		fmt.Println("Vous n'avez pas choisi de Race")
 		p.Menu_Race()
 	}
 }
