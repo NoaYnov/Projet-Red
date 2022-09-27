@@ -1,4 +1,4 @@
-#Projet Red:
+                                                              Projet Red
 
 Voici le résultat de 3 semaines de travail sur la programmation d'un jeux vidéo dans le terminal dans le language goolang.
 
