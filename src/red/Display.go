@@ -1,6 +1,5 @@
 package red
 
-
 import "fmt"
 
 func (p *Personnage) Display() {
@@ -17,5 +16,4 @@ func (p *Personnage) Display() {
 	fmt.Println("Money :", p.money)
 	fmt.Printf("Skill :")
 	p.DisplaySkill()
-	fmt.Println("-----------------------")
 }

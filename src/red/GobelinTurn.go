@@ -6,13 +6,8 @@ import (
 
 func (p *Personnage) GobelinTurn(nbr_tour int) {
 
-	if p.goblin.point_de_vie_actuel <= 0 {
-		fmt.Println("Vous avez gagné le combat")
-		fmt.Println("Vous avez gagné 15 pièces d'or")
-		p.Menu()
-	}
 	fmt.Println("C'est le tour du gobelin")
-	fmt.Println("Le goblin attaque")
+	fmt.Println("Le goblin vous attaque")
 
 	if nbr_tour%3 == 0 {
 		p.point_de_vie_actuel -= p.goblin.attaque * 2

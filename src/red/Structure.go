@@ -7,15 +7,19 @@ type Mob struct {
 	resistance_physique int
 	resistance_magique  int
 	attaque             int
+	initiative          int
 }
 
 type Personnage struct {
-	age                 int
+	age                 string
 	nom                 string
 	race                string
 	classe              string
 	niveau              int
+	experience_actuel   int
+	experience_max      int
 	force               int
+	initiative          int
 	point_de_vie_max    int
 	point_de_vie_actuel int
 	resistance_physique int
@@ -30,12 +34,15 @@ type Personnage struct {
 	equippants          string
 	equipboots          string
 	equipgloves         string
-	liminventaire	    int
-	limslot 		    int
+	liminventaire       int
+	limslot             int
+	mana_max            int
+	mana_actuel         int
+	exit                bool
 	goblin              Mob
-	vers_geant          Mob
+	versgeant           Mob
 	troll               Mob
-
+	gorgone             Mob
 }
 
 type Armor struct {
@@ -44,8 +51,4 @@ type Armor struct {
 	gloves     []string
 	pants      []string
 	chestplate []string
-}
-
-type Deplacement struct {
-	Direction string
 }

@@ -14,10 +14,12 @@ func (p *Personnage) Menu() {
 	fmt.Println("2- Accéder au contenu de l’inventaire")
 	fmt.Println("3- Accéder au contenu de l’inventaire d’armure")
 	fmt.Println("4- Tableau de Skill")
-	fmt.Println("5- Shop")
+	fmt.Println("5- Magasin")
 	fmt.Println("6- Forge")
-	fmt.Println("7- Training")
-	fmt.Println("8- Quitter")
+	fmt.Println("7- Entrainement")
+	fmt.Println("8- se déplacer")
+	fmt.Println("9- Qui sont-ils ?")
+	fmt.Println("10- Quitter")
 	fmt.Println("________________________________________________")
 	fmt.Printf("\n")
 
@@ -98,17 +100,21 @@ func (p *Personnage) Menu() {
 		p.Forge()
 
 	case 7:
-		p.TrainingFight()
+		p.TrainingFightGobelin()
 
 	case 8:
+		p.SeDeplacer()
+
+	case 9:
+		fmt.Println("Les 2 artistes sont: ")
+		fmt.Println("- ABBA ")
+		fmt.Println("- Steven Spielberg")
+
+	case 10:
 		fmt.Println("ALT+F4")
 		return
 
-
 	default:
-		fmt.Println(retour)
-		fmt.Println("________________________________________________")
-		fmt.Printf("\n")
 		fmt.Println("Aucun menu associe")
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
