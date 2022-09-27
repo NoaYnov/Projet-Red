@@ -1,6 +1,6 @@
                                                               Projet Red
 
-Voici le résultat de 3 semaines de travail sur la programmation d'un jeux vidéo dans le terminal dans le language goolang.
+Voici le résultat de 3 semaines de travail sur la programmation d'un jeux vidéo jouable dans le terminal utilisant le language goolang.
 
 "Nom du jeux" est un jeux dans un univers médiéval-fantastique où vous incarnez votre propre personnage.
 
