@@ -2,7 +2,7 @@
 
 Voici le résultat de 3 semaines de travail sur la programmation d'un jeux vidéo jouable dans le terminal utilisant le language goolang.
 
-"Nom du jeux" est un jeux dans un univers médiéval-fantastique où vous incarnez votre propre personnage.
+TerminaleQuest est un jeux dans un univers médiéval-fantastique où vous incarnez votre propre personnage.
 
 L'aventure commence dans la région de Tarate plus précisement dans la ville d'Andariel au sud du continent. Votre but sera de tuer la reine des Gorgones.
 
