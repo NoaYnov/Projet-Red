@@ -61,32 +61,4 @@ func (p *Personnage) UseSkill(skill string, nbr int) { //Utilise un sort en prev
 			p.PlayerTurn(2)
 		}
 	}
-	if nbr == 3 {
-		if p.TestRemoveSkill(skill) == true {
-			p.troll.point_de_vie_actuel -= p.skill[skill] * (1 - p.troll.resistance_magique/100)
-			if p.troll.point_de_vie_actuel <= 0 {
-				p.troll.point_de_vie_actuel = 0
-			}
-			fmt.Println("Vous avez utilisé ", skill)
-			fmt.Println("Vous avez infligé", p.skill[skill]*(1-p.troll.resistance_magique/100), "points de degats")
-			fmt.Println("PV du troll:", p.troll.point_de_vie_actuel, "/", p.troll.point_de_vie_max)
-		} else {
-			fmt.Println("Vous n'avez pas ce sort")
-			p.PlayerTurn(3)
-		}
-	}
-	if nbr == 4 {
-		if p.TestRemoveSkill(skill) == true {
-			p.gorgone.point_de_vie_actuel -= p.skill[skill] * (1 - p.gorgone.resistance_magique/100)
-			if p.gorgone.point_de_vie_actuel <= 0 {
-				p.gorgone.point_de_vie_actuel = 0
-			}
-			fmt.Println("Vous avez utilisé ", skill)
-			fmt.Println("Vous avez infligé", p.skill[skill]*(1-p.gorgone.resistance_magique/100), "points de degats")
-			fmt.Println("PV de la gorgone:", p.gorgone.point_de_vie_actuel, "/", p.gorgone.point_de_vie_max)
-		} else {
-			fmt.Println("Vous n'avez pas ce sort")
-			p.PlayerTurn(4)
-		}
-	}
 }

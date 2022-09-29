@@ -8,8 +8,7 @@ func (p *Personnage) SeDeplacer() { //Fonction qui permet de se déplacer dans l
 	fmt.Println("Ou voulez vous aller ?")
 	fmt.Println("1- Les marais de la mort")
 	fmt.Println("2- les Montagnes désolées")
-	fmt.Println("3- les plaines arides")
-	fmt.Println("4- retourner au menu")
+	fmt.Println("3- retourner au menu")
 	fmt.Scanln(&direction)
 	switch direction {
 	case 1:
@@ -36,7 +35,6 @@ func (p *Personnage) SeDeplacer() { //Fonction qui permet de se déplacer dans l
 		case 3:
 			p.SeDeplacer()
 		}
-	default:
 	case 2:
 		fmt.Println("Vous vous trouvez dans les Montagnes désolées")
 		fmt.Println("1. Parler à Darur")
@@ -54,24 +52,16 @@ func (p *Personnage) SeDeplacer() { //Fonction qui permet de se déplacer dans l
 			}
 			p.SeDeplacer()
 		case 2:
-			fmt.Println("Vous combattez un troll")
-			p.TrainingFightTroll()
+			fmt.Println("Le troll est supprimé pour cause de mise à jour, il resortira plus tard dans un dlc")
+			p.SeDeplacer()
 		case 3:
 			p.SeDeplacer()
+
 		}
 	case 3:
-		fmt.Println("Vous vous trouvez dans les plaines arides")
-		fmt.Println("1- Combattre la reine des Gorgones")
-		fmt.Println("2-retour")
-		fmt.Scanln(&choix)
-		switch choix {
-		case 1:
-			fmt.Println("Vous combattez la reine des Gorgones")
-			p.TrainingFightGorgone()
-		case 2:
-			p.SeDeplacer()
-		}
-	case 4:
+		p.Menu()
+
+	default:
 		p.Menu()
 	}
 }

@@ -17,25 +17,5 @@ func (p *Personnage) VersGeant() { // initialise le Vers Géant
 	p.versgeant.resistance_physique = 15
 	p.versgeant.resistance_magique = 10
 	p.versgeant.attaque = 6
-	p.versgeant.initiative = 10
-}
-
-func (p *Personnage) Troll() { // initialise le Troll
-	p.troll.name = "Troll"
-	p.troll.point_de_vie_max = 75
-	p.troll.point_de_vie_actuel = 75
-	p.troll.resistance_physique = 10
-	p.troll.resistance_magique = 20
-	p.troll.attaque = 12
-	p.troll.initiative = 10
-}
-
-func (p *Personnage) Gorgone() { // initialise la Gorgone
-	p.gorgone.name = "Gorgone"
-	p.gorgone.point_de_vie_max = 1500
-	p.gorgone.point_de_vie_actuel = 1500
-	p.gorgone.resistance_physique = 20
-	p.gorgone.resistance_magique = 20
-	p.gorgone.attaque = 20
-	p.gorgone.initiative = 100
+	p.versgeant.initiative = 26
 }

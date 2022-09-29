@@ -3,9 +3,6 @@ package red
 import "fmt"
 
 func (p *Personnage) VersGeantTurn(nbr_tour int) { // Fonction qui gère le tour du Vers Géant
-	if p.exit == true {
-		return
-	}
 	fmt.Println("C'est le tour du vers geant")
 	fmt.Println("Le vers geant vous attaque")
 	if nbr_tour%3 == 0 {

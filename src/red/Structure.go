@@ -24,6 +24,8 @@ type Personnage struct { // Structure du personnage et incluant d'autres éléme
 	point_de_vie_actuel int
 	resistance_physique int
 	resistance_magique  int
+	mortgoblin          bool
+	mortvers            bool
 	skill               map[string]int
 	inventaire          map[string]int
 	inventaireArmor     map[string]string
@@ -41,8 +43,6 @@ type Personnage struct { // Structure du personnage et incluant d'autres éléme
 	exit                bool
 	goblin              Mob
 	versgeant           Mob
-	troll               Mob
-	gorgone             Mob
 }
 
 type Armor struct { // Structure des armures

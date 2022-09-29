@@ -5,9 +5,7 @@ import (
 )
 
 func (p *Personnage) GobelinTurn(nbr_tour int) { // Fonction qui permet de faire le tour du gobelin lors d'un combat
-	if p.exit == true {
-		return
-	}
+
 	fmt.Println("C'est le tour du gobelin")
 	fmt.Println("Le goblin vous attaque")
 

@@ -35,18 +35,7 @@ func (p *Personnage) TakePotPoison(nbr int) { // fonction qui permet d'utiliser 
 			}
 			fmt.Println("Le vers a perdu 10 points de vie")
 			fmt.Println("PV du vers:", p.versgeant.point_de_vie_actuel, "/", p.versgeant.point_de_vie_max)
-			if nbr == 3 {
-				p.troll.point_de_vie_actuel -= 10
-				time.Sleep(interval)
-			}
-			fmt.Println("Le troll a perdu 10 points de vie")
-			fmt.Println("PV du troll:", p.troll.point_de_vie_actuel, "/", p.troll.point_de_vie_max)
-			if nbr == 4 {
-				p.gorgone.point_de_vie_actuel -= 10
-				time.Sleep(interval)
-			}
-			fmt.Println("La gorgone a perdu 10 points de vie")
-			fmt.Println("PV de la gorgone:", p.gorgone.point_de_vie_actuel, "/", p.gorgone.point_de_vie_max)
+
 		}
 	} else {
 		fmt.Println("Vous n'avez pas de potion de poison")
