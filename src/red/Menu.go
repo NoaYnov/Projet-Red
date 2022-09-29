@@ -2,8 +2,7 @@ package red
 
 import "fmt"
 
-func (p *Personnage) Menu() {
-
+func (p *Personnage) Menu() { //Menu qui renvoi vers d'autres menus ou fonctions
 	personnage := p
 	var result int
 	var retour int
@@ -22,7 +21,6 @@ func (p *Personnage) Menu() {
 	fmt.Println("10- Quitter")
 	fmt.Println("________________________________________________")
 	fmt.Printf("\n")
-
 	fmt.Scanln(&result)
 	switch result {
 	case 1:
@@ -33,13 +31,12 @@ func (p *Personnage) Menu() {
 		fmt.Println("1- retour")
 		fmt.Println("________________________________________________")
 		fmt.Scanln(&retour)
-
 		if retour == 1 {
 			personnage.Menu()
 		}
-
 	case 2:
 		fmt.Printf("\n")
+		fmt.Println(p.inventaire)
 		p.AccessInventory()
 		fmt.Printf("\n")
 		fmt.Printf("\n")
@@ -57,15 +54,12 @@ func (p *Personnage) Menu() {
 			p.TakePotHeal()
 			fmt.Println(p.point_de_vie_actuel)
 			p.Menu()
-
 		case 2:
 			p.SelfPoisonPot()
 			fmt.Println(p.point_de_vie_actuel)
 			p.Menu()
-
 		case 3:
-			personnage.Menu()
-
+			p.Menu()
 		default:
 			fmt.Println("________________________________________________")
 			fmt.Printf("\n")
@@ -74,12 +68,9 @@ func (p *Personnage) Menu() {
 			fmt.Printf("\n")
 			fmt.Printf("\n")
 			personnage.Menu()
-
 		}
-
 	case 3:
 		p.MenuEquipement()
-
 	case 4:
 		fmt.Printf("\n")
 		p.DisplaySkill()
@@ -88,38 +79,29 @@ func (p *Personnage) Menu() {
 		fmt.Scanln(&retour)
 		switch retour {
 		case 1:
-
 			personnage.Menu()
-
 		}
 
 	case 5:
 		p.Shop()
-
 	case 6:
 		p.Forge()
-
 	case 7:
 		p.TrainingFightGobelin()
-
 	case 8:
 		p.SeDeplacer()
-
 	case 9:
 		fmt.Println("Les 2 artistes sont: ")
 		fmt.Println("- ABBA ")
 		fmt.Println("- Steven Spielberg")
-
 	case 10:
 		fmt.Println("ALT+F4")
 		return
-
 	default:
 		fmt.Println("Aucun menu associe")
 		fmt.Println("________________________________________________")
 		fmt.Printf("\n")
 		fmt.Printf("\n")
 		p.Menu()
-
 	}
 }

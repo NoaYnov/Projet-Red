@@ -1,6 +1,6 @@
 package red
 
-func IsAlpha(sentence string) bool {
+func (p *Personnage) IsAlpha(sentence string) bool { // fonction qui vérifie si la chaine de caractère est alphabétique
 	result := false
 	if len(sentence) == 0 {
 		return false
@@ -15,12 +15,11 @@ func IsAlpha(sentence string) bool {
 			continue
 		}
 		return false
-
 	}
 	return result
 }
 
-func IsNumeric(sentence string) bool {
+func (p *Personnage) IsNumeric(sentence string) bool { // fonction qui vérifie si la chaine de caractère est numérique
 
 	for i := 0; i < len(sentence); i++ {
 		if sentence[i] > 47 && sentence[i] < 58 {

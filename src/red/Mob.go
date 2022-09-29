@@ -1,6 +1,6 @@
 package red
 
-func (p *Personnage) Gobelin() {
+func (p *Personnage) Gobelin() { // initialise le Gobelin
 	p.goblin.name = "Goblin d'entrainement"
 	p.goblin.point_de_vie_max = 4000
 	p.goblin.point_de_vie_actuel = 4000
@@ -8,10 +8,9 @@ func (p *Personnage) Gobelin() {
 	p.goblin.resistance_magique = 10
 	p.goblin.attaque = 1
 	p.goblin.initiative = 10
-
 }
 
-func (p *Personnage) VersGeant() {
+func (p *Personnage) VersGeant() { // initialise le Vers Géant
 	p.versgeant.name = "Vers géant"
 	p.versgeant.point_de_vie_max = 110
 	p.versgeant.point_de_vie_actuel = 110
@@ -19,10 +18,9 @@ func (p *Personnage) VersGeant() {
 	p.versgeant.resistance_magique = 10
 	p.versgeant.attaque = 6
 	p.versgeant.initiative = 10
-
 }
 
-func (p *Personnage) Troll() {
+func (p *Personnage) Troll() { // initialise le Troll
 	p.troll.name = "Troll"
 	p.troll.point_de_vie_max = 75
 	p.troll.point_de_vie_actuel = 75
@@ -30,10 +28,9 @@ func (p *Personnage) Troll() {
 	p.troll.resistance_magique = 20
 	p.troll.attaque = 12
 	p.troll.initiative = 10
-
 }
 
-func (p *Personnage) Gorgone() {
+func (p *Personnage) Gorgone() { // initialise la Gorgone
 	p.gorgone.name = "Gorgone"
 	p.gorgone.point_de_vie_max = 1500
 	p.gorgone.point_de_vie_actuel = 1500
@@ -41,5 +38,4 @@ func (p *Personnage) Gorgone() {
 	p.gorgone.resistance_magique = 20
 	p.gorgone.attaque = 20
 	p.gorgone.initiative = 100
-
 }

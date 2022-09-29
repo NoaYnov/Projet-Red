@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func (p *Personnage) SelfPoisonPot() {
+func (p *Personnage) SelfPoisonPot() { // fonction qui permet de boire une potion de poison
 	fmt.Println(p.inventaire["potion de poison"])
 	if p.inventaire["potion de poison"] >= 1 {
 		p.RemoveInventory("potion de poison")
@@ -17,7 +17,7 @@ func (p *Personnage) SelfPoisonPot() {
 	}
 }
 
-func (p *Personnage) TakePotPoison(nbr int) {
+func (p *Personnage) TakePotPoison(nbr int) { // fonction qui permet d'utiliser une potion de poison sur un ennemi
 	fmt.Println(p.inventaire["potion de poison"])
 	if p.inventaire["potion de poison"] >= 1 {
 		p.RemoveInventory("potion de poison")
@@ -48,7 +48,6 @@ func (p *Personnage) TakePotPoison(nbr int) {
 			fmt.Println("La gorgone a perdu 10 points de vie")
 			fmt.Println("PV de la gorgone:", p.gorgone.point_de_vie_actuel, "/", p.gorgone.point_de_vie_max)
 		}
-
 	} else {
 		fmt.Println("Vous n'avez pas de potion de poison")
 		p.PlayerTurn(nbr)

@@ -2,20 +2,19 @@ package red
 
 import "fmt"
 
-func (p *Personnage) AccessMoney() {
+func (p *Personnage) AccessMoney() { // Affiche l'argent du joueur
 	println(p.money)
-
 }
 
-func (p *Personnage) AddMoney(amount int) {
+func (p *Personnage) AddMoney(amount int) { // Permet d'ajouter de l'argent au joueur
 	p.money += amount
 }
 
-func (p *Personnage) RemoveMoney(amount int) {
+func (p *Personnage) RemoveMoney(amount int) { // Permet de retirer de l'argent au joueur
 	p.money -= amount
 }
 
-func (p *Personnage) TestRemoveMoney(amount int) bool {
+func (p *Personnage) TestRemoveMoney(amount int) bool { //Test si le joueur a assez d'argent
 	if p.money >= amount {
 		return true
 	} else {
@@ -23,7 +22,7 @@ func (p *Personnage) TestRemoveMoney(amount int) bool {
 	}
 }
 
-func (p *Personnage) BuySkill(money int, skill string, degats int) {
+func (p *Personnage) BuySkill(money int, skill string, degats int) { //Permet d'acheter un skill tout en verifiant qu'il y est assez d'argent
 	if p.TestAddSkill(skill) == false {
 		fmt.Println("Vous avez déjà ce skill")
 	} else if p.TestRemoveMoney(money) == false {
@@ -35,17 +34,7 @@ func (p *Personnage) BuySkill(money int, skill string, degats int) {
 	}
 }
 
-// func (p *Personnage) BuyItem(money int,item string){
-// 	if p.TestAddInventory(item) == false {
-// 		fmt.Println("Slot plein")
-// 	} else if p.TestRemoveMoney(money) == false {
-// 		fmt.Println("Vous n'avez pas assez d'argent")
-// 	}else{p.RemoveMoney(money)
-// 			p.AddInventory(item)
-// 			fmt.Println("Vous avez acheté : ",item)}
-// }
-
-func (p *Personnage) TestRemoveMoneyNbr(amount int, nbr int) bool {
+func (p *Personnage) TestRemoveMoneyNbr(amount int, nbr int) bool { // Permet de tester si le joueur a assez d'argent pour acheter plusieurs items
 	if p.money >= amount*nbr {
 		return true
 	} else {
@@ -53,11 +42,11 @@ func (p *Personnage) TestRemoveMoneyNbr(amount int, nbr int) bool {
 	}
 }
 
-func (p *Personnage) RemoveMoneyNbr(amount int, nbr int) {
+func (p *Personnage) RemoveMoneyNbr(amount int, nbr int) { // Permet de retirer de l'argent de de plusieurs achats au joueur
 	p.money -= amount * nbr
 }
 
-func (p *Personnage) BuySeveralItem(money int, nbr int, item string) {
+func (p *Personnage) BuySeveralItem(money int, nbr int, item string) { // Permet d'acheter plusieurs items tout en verifiant qu'il y est assez d'argent
 	if p.TestAddInventoryNbr(nbr, item) == false {
 		fmt.Println("Slot plein")
 	} else if p.TestRemoveMoneyNbr(nbr, money) == false {

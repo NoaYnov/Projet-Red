@@ -4,8 +4,9 @@ import (
 	"fmt"
 )
 
-func (p *Personnage) PlayerTurn(nbr int) {
+func (p *Personnage) PlayerTurn(nbr int) { //Permet de déclencher le tour du joueur avec toutes ces possibilitées d'actions
 	if p.exit == true {
+		p.exit = false
 		return
 	}
 	var choix int
@@ -17,7 +18,6 @@ func (p *Personnage) PlayerTurn(nbr int) {
 	fmt.Println("C'est votre tour")
 	fmt.Printf("\n")
 	fmt.Println("__________________________________________________")
-
 	fmt.Println("Que voulez vous faire?")
 	fmt.Println("1-Attaquer")
 	fmt.Println("2-Utiliser un sort")
@@ -27,36 +27,94 @@ func (p *Personnage) PlayerTurn(nbr int) {
 	switch choix {
 	case 1:
 		if nbr == 1 {
-			p.goblin.point_de_vie_actuel -= p.force
+			p.goblin.point_de_vie_actuel -= p.force * (1 - p.goblin.resistance_physique/100)
 			if p.goblin.point_de_vie_actuel <= 0 {
 				p.goblin.point_de_vie_actuel = 0
+				p.money += 15
+				p.experience_actuel += 15
+				fmt.Print("Vous avez gagné le combat")
+				fmt.Println("Vous avez gagné 15 pièces d'or")
+				fmt.Println("Vous avez gagné 15 points d'expérience")
+				p.UpNiveau()
+				p.exit = true
+				p.Menu()
+
+			} else {
+				fmt.Println("Vous avez infligé", p.force*(1-p.goblin.resistance_physique/100), "point de dégats")
+				fmt.Println("PV du gobelin:", p.goblin.point_de_vie_actuel, "/", p.goblin.point_de_vie_max)
 			}
-			fmt.Println("Vous avez infligé", p.force, "points de degats")
-			fmt.Println("PV du gobelin:", p.goblin.point_de_vie_actuel, "/", p.goblin.point_de_vie_max)
+
 		}
 		if nbr == 2 {
-			p.versgeant.point_de_vie_actuel -= p.force
+			p.versgeant.point_de_vie_actuel -= p.force * (1 - p.versgeant.resistance_physique/100)
 			if p.versgeant.point_de_vie_actuel <= 0 {
 				p.versgeant.point_de_vie_actuel = 0
+				p.money += 15
+				p.experience_actuel += 15
+				fmt.Print("Vous avez gagné le combat")
+				fmt.Println("Vous avez gagné 15 pièces d'or")
+				fmt.Println("Vous avez gagné 15 points d'expérience")
+				if p.TestAddInventory("Ecaille de vers géant") == true {
+					p.AddInventory("Ecaille de vers géant")
+					fmt.Println("Vous récupérez une écaille de vers géant")
+				} else {
+					fmt.Println("Vous n'avez pas de place dans votre inventaire")
+				}
+				p.UpNiveau()
+				p.exit = true
+				p.SeDeplacer()
+
+			} else {
+				fmt.Println("Vous avez infligé", p.force*(1-p.versgeant.resistance_physique/100), "point de dégats")
+				fmt.Println("PV du vers géant:", p.versgeant.point_de_vie_actuel, "/", p.versgeant.point_de_vie_max)
 			}
-			fmt.Println("Vous avez infligé", p.force, "points de degats")
-			fmt.Println("PV du géant:", p.versgeant.point_de_vie_actuel, "/", p.versgeant.point_de_vie_max)
 		}
 		if nbr == 3 {
-			p.troll.point_de_vie_actuel -= p.force
+			p.troll.point_de_vie_actuel -= p.force * (1 - p.troll.resistance_physique/100)
 			if p.troll.point_de_vie_actuel <= 0 {
 				p.troll.point_de_vie_actuel = 0
+				p.money += 15
+				p.experience_actuel += 15
+				fmt.Println("Vous avez gagné le combat")
+				fmt.Println("Vous avez gagné 15 pièces d'or")
+				fmt.Println("Vous avez gagné 15 points d'expérience")
+				if p.TestAddInventory("Dent de troll") == true {
+					p.AddInventory("Dent de troll")
+					fmt.Println("Vous récupérez une dent de troll")
+				} else {
+					fmt.Println("Vous n'avez pas de place dans votre inventaire")
+				}
+				p.UpNiveau()
+				p.exit = true
+				p.SeDeplacer()
+
+			} else {
+				fmt.Println("Vous avez infligé", p.force*(1-p.troll.resistance_physique/100), "point de dégats")
+				fmt.Println("PV du troll:", p.troll.point_de_vie_actuel, "/", p.troll.point_de_vie_max)
 			}
-			fmt.Println("Vous avez infligé", p.force, "points de degats")
-			fmt.Println("PV du dragon:", p.troll.point_de_vie_actuel, "/", p.troll.point_de_vie_max)
 		}
 		if nbr == 4 {
-			p.gorgone.point_de_vie_actuel -= p.force
+			p.gorgone.point_de_vie_actuel -= p.force * (1 - p.gorgone.resistance_physique/100)
 			if p.gorgone.point_de_vie_actuel <= 0 {
 				p.gorgone.point_de_vie_actuel = 0
+				p.money += 15
+				p.experience_actuel += 15
+				fmt.Println("Vous avez gagné le combat")
+				fmt.Println("Vous avez gagné 15 pièces d'or")
+				fmt.Println("Vous avez gagné 15 points d'expérience")
+				if p.TestAddInventory("médaillon de la victoire") == true {
+					p.AddInventory("médaillon de la victoire")
+					fmt.Println("Vous récupérez un médaillon de la victoire")
+				} else {
+					fmt.Println("Vous n'avez pas de place dans votre inventaire")
+				}
+				p.UpNiveau()
+				p.exit = true
+				p.SeDeplacer()
+			} else {
+				fmt.Println("Vous avez infligé", p.force*(1-p.gorgone.resistance_physique/100), "point de dégats")
+				fmt.Println("PV de la gorgone:", p.gorgone.point_de_vie_actuel, "/", p.gorgone.point_de_vie_max)
 			}
-			fmt.Println("Vous avez infligé", p.force, "points de degats")
-			fmt.Println("PV de la gorgone:", p.gorgone.point_de_vie_actuel, "/", p.gorgone.point_de_vie_max)
 		}
 	case 2:
 		fmt.Println("Quel sort voulez vous utiliser?")
@@ -91,16 +149,13 @@ func (p *Personnage) PlayerTurn(nbr int) {
 			} else {
 				fmt.Println("Vous n'avez pas assez de mana")
 			}
-
 		case 5:
 			p.PlayerTurn(nbr)
 			break
-
 		default:
 			fmt.Println("Vous n'avez pas choisi une option valide")
 			p.PlayerTurn(nbr)
 		}
-
 	case 3:
 		fmt.Println("Quel objet voulez vous utiliser?")
 		fmt.Println("1-Potion de vie")
@@ -117,9 +172,12 @@ func (p *Personnage) PlayerTurn(nbr int) {
 		p.money -= 2
 		fmt.Println("Vous avez fuit le combat")
 		fmt.Println("Vous avez perdu 2 pieces d'or")
+		p.goblin.point_de_vie_actuel = 0
+		p.versgeant.point_de_vie_actuel = 0
+		p.troll.point_de_vie_actuel = 0
+		p.gorgone.point_de_vie_actuel = 0
 		p.exit = true
 		p.Menu()
-
 	default:
 		fmt.Println("Vous n'avez pas choisi une option valide")
 		p.PlayerTurn(nbr)

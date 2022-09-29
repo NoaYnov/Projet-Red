@@ -2,7 +2,7 @@ package red
 
 import "fmt"
 
-func (p *Personnage) UpNiveau() {
+func (p *Personnage) UpNiveau() { // Fonction qui permet de monter de niveau
 	if p.experience_actuel == p.experience_max {
 		p.experience_actuel = 0
 		p.experience_max *= 2
@@ -27,10 +27,10 @@ func (p *Personnage) UpNiveau() {
 	}
 }
 
-func (p *Personnage) DisplayNiveau() {
+func (p *Personnage) DisplayNiveau() { // Fonction qui permet d'afficher le niveau du personnage
 	fmt.Println("Vous êtes niveau", p.niveau)
 }
 
-func (p *Personnage) DisplayExperience() {
+func (p *Personnage) DisplayExperience() { // Fonction qui permet d'afficher l'expérience du personnage
 	fmt.Println("Vous avez", p.experience_actuel, "points d'expérience")
 }

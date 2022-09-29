@@ -2,7 +2,7 @@ package red
 
 import "fmt"
 
-func (p *Personnage) Shop() {
+func (p *Personnage) Shop() { // Fonction qui permet d'acheter des objets dans le shop
 	var NBR int
 	var result7 int
 	fmt.Println("Bienvenue dana le shop, vous pourrez y acheter toute sorte d'objet très utile pendant votre aventure")
@@ -27,43 +27,35 @@ func (p *Personnage) Shop() {
 		fmt.Scanln(&NBR)
 		p.BuySeveralItem(3, NBR, "potion de vie")
 		p.Menu()
-
 	case 2:
 		fmt.Println("Combien de potion de poison voulez vous acheter ?")
 		fmt.Scanln(&NBR)
 		p.BuySeveralItem(6, NBR, "potion de poison")
 		p.Menu()
-
 	case 3:
 		fmt.Println("Combien de potion de mana voulez vous acheter ?")
 		fmt.Scanln(&NBR)
 		p.BuySeveralItem(10, NBR, "potion de mana")
 		p.Menu()
-
 	case 4:
 		p.BuySkill(25, "Boule de feu", 40)
 		p.Menu()
-
 	case 5:
 		p.BuySkill(40, "Boule de glace", 75)
 		p.Menu()
-
 	case 6:
 		p.BuySkill(150, "Boule de foudre", 500)
 		p.Menu()
-
 	case 7:
 		fmt.Println("Combien de tissus voulez vous acheter ?")
 		fmt.Scanln(&NBR)
 		p.BuySeveralItem(2, NBR, "tissu")
 		p.Menu()
-
 	case 8:
 		fmt.Println("Combien de cuir voulez vous acheter ?")
 		fmt.Scanln(&NBR)
 		p.BuySeveralItem(4, NBR, "cuir")
 		p.Menu()
-
 	case 9:
 		if p.TestRemoveMoney(500) == true {
 			p.liminventaire += 10
@@ -73,7 +65,6 @@ func (p *Personnage) Shop() {
 			fmt.Println("Vous n'avez pas assez d'argent")
 		}
 		p.Menu()
-
 	case 10:
 		if p.TestRemoveMoney(1000) == true {
 			p.limslot += 10
@@ -83,7 +74,6 @@ func (p *Personnage) Shop() {
 			fmt.Println("Vous n'avez pas assez d'argent")
 		}
 		p.Menu()
-
 	case 11:
 		if p.TestRemoveMoney(1500) == true {
 			p.mana_max *= 2
@@ -93,13 +83,10 @@ func (p *Personnage) Shop() {
 			fmt.Println("Vous n'avez pas assez d'argent")
 		}
 		p.Menu()
-
 	case 12:
 		p.Menu()
-
 	default:
 		fmt.Println("Vous n'avez pas choisi une option valide")
 		p.Menu()
-
 	}
 }

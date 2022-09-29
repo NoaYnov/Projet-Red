@@ -2,18 +2,18 @@ package red
 
 import "fmt"
 
-func (p *Personnage) Forge() {
+func (p *Personnage) Forge() { // Menu de la forge
 	var result0 int
 	fmt.Println("Bienvenue dans la forge, vous pourrez y fabriquer différent objet pour amélioré votre équipement")
 	fmt.Printf("Vous possédez")
 	p.AccessInventory()
 	p.AccessMoney()
 	fmt.Println("Que voulez vous fabriquer ?")
-	fmt.Println("1- Chapeau de l’aventurier : 10 pièces , 1 tissu, 2 cuir")
-	fmt.Println("2- Bottes de l’aventurier : 8 pièces , 2 tissu, 1 cuir")
-	fmt.Println("3- Gants de l’aventurier : 3 pièces , 3 tissu, 1 cuir")
-	fmt.Println("4- Pantalon de l’aventurier : 10 pièces , 4 tissu, 4 cuir")
-	fmt.Println("5- Plastron de l’aventurier : 25 pièces , 8 tissu, 6 cuir")
+	fmt.Println("1- Casque : 8 pièces , 1 tissu, 2 cuir")
+	fmt.Println("2- Bottes : 6 pièces , 2 tissu, 1 cuir")
+	fmt.Println("3- Gantlet : 3 pièces , 3 tissu, 1 cuir")
+	fmt.Println("4- Jambière : 10 pièces , 4 tissu, 4 cuir")
+	fmt.Println("5- Plastron : 25 pièces , 8 tissu, 6 cuir")
 	fmt.Println("6- Retour")
 	fmt.Scanln(&result0)
 	switch result0 {
@@ -32,18 +32,15 @@ func (p *Personnage) Forge() {
 	case 5:
 		p.CraftForgeChestplate(25, "tissu", 8, "cuir", 6, "Plastron")
 		p.Menu()
-
 	case 6:
 		p.Menu()
-
 	default:
 		fmt.Println("Vous n'avez pas choisi une option valide")
 		p.Menu()
-
 	}
 }
 
-func (p *Personnage) CraftForgeHelmet(money int, ressource1 string, nbr1 int, ressource2 string, nbr2 int, item string) {
+func (p *Personnage) CraftForgeHelmet(money int, ressource1 string, nbr1 int, ressource2 string, nbr2 int, item string) { //fonction de craft du casque qui verifie toute les condition necessaire
 	if p.TestLenAddArmor(item) == false {
 		fmt.Println("Inventaire d'armure plein")
 	} else if p.TestItemAddArmor(item) == false {
@@ -61,10 +58,9 @@ func (p *Personnage) CraftForgeHelmet(money int, ressource1 string, nbr1 int, re
 		p.AddHelmet(item)
 		fmt.Println("Vous avez fabriqué : ", item)
 	}
-
 }
 
-func (p *Personnage) CraftForgeBoots(money int, ressource1 string, nbr1 int, ressource2 string, nbr2 int, item string) {
+func (p *Personnage) CraftForgeBoots(money int, ressource1 string, nbr1 int, ressource2 string, nbr2 int, item string) { //fonction de craft des bottes qui verifie toute les condition necessaire
 	if p.TestLenAddArmor(item) == false {
 		fmt.Println("Inventaire d'armure plein")
 	} else if p.TestItemAddArmor(item) == false {
@@ -82,10 +78,9 @@ func (p *Personnage) CraftForgeBoots(money int, ressource1 string, nbr1 int, res
 		p.AddBoots(item)
 		fmt.Println("Vous avez fabriqué : ", item)
 	}
-
 }
 
-func (p *Personnage) CraftForgeGloves(money int, ressource1 string, nbr1 int, ressource2 string, nbr2 int, item string) {
+func (p *Personnage) CraftForgeGloves(money int, ressource1 string, nbr1 int, ressource2 string, nbr2 int, item string) { //fonction de craft des gantlets qui verifie toute les condition necessaire
 	if p.TestLenAddArmor(item) == false {
 		fmt.Println("Inventaire d'armure plein")
 	} else if p.TestItemAddArmor(item) == false {
@@ -103,10 +98,9 @@ func (p *Personnage) CraftForgeGloves(money int, ressource1 string, nbr1 int, re
 		p.AddGloves(item)
 		fmt.Println("Vous avez fabriqué : ", item)
 	}
-
 }
 
-func (p *Personnage) CraftForgePants(money int, ressource1 string, nbr1 int, ressource2 string, nbr2 int, item string) {
+func (p *Personnage) CraftForgePants(money int, ressource1 string, nbr1 int, ressource2 string, nbr2 int, item string) { //fonction de craft des jambieres qui verifie toute les condition necessaire
 	if p.TestLenAddArmor(item) == false {
 		fmt.Println("Inventaire d'armure plein")
 	} else if p.TestItemAddArmor(item) == false {
@@ -124,10 +118,9 @@ func (p *Personnage) CraftForgePants(money int, ressource1 string, nbr1 int, res
 		p.AddPants(item)
 		fmt.Println("Vous avez fabriqué : ", item)
 	}
-
 }
 
-func (p *Personnage) CraftForgeChestplate(money int, ressource1 string, nbr1 int, ressource2 string, nbr2 int, item string) {
+func (p *Personnage) CraftForgeChestplate(money int, ressource1 string, nbr1 int, ressource2 string, nbr2 int, item string) { //fonction de craft du plastron qui verifie toute les condition necessaire
 	if p.TestLenAddArmor(item) == false {
 		fmt.Println("Inventaire d'armure plein")
 	} else if p.TestItemAddArmor(item) == false {
@@ -145,5 +138,4 @@ func (p *Personnage) CraftForgeChestplate(money int, ressource1 string, nbr1 int
 		p.AddChestplate(item)
 		fmt.Println("Vous avez fabriqué : ", item)
 	}
-
 }

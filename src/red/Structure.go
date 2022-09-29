@@ -1,6 +1,6 @@
 package red
 
-type Mob struct {
+type Mob struct { // Structure des monstres
 	name                string
 	point_de_vie_max    int
 	point_de_vie_actuel int
@@ -10,7 +10,7 @@ type Mob struct {
 	initiative          int
 }
 
-type Personnage struct {
+type Personnage struct { // Structure du personnage et incluant d'autres éléments
 	age                 string
 	nom                 string
 	race                string
@@ -45,7 +45,7 @@ type Personnage struct {
 	gorgone             Mob
 }
 
-type Armor struct {
+type Armor struct { // Structure des armures
 	helmet     []string
 	boots      []string
 	gloves     []string

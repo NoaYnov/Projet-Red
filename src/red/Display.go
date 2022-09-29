@@ -2,7 +2,7 @@ package red
 
 import "fmt"
 
-func (p *Personnage) Display() {
+func (p *Personnage) Display() { //Affiche les caractéristiques du personnage
 	fmt.Println("Age :", p.age)
 	fmt.Println("Nom :", p.nom)
 	fmt.Println("Race :", p.race)

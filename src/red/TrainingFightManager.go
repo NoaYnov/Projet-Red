@@ -1,52 +1,53 @@
 package red
 
-import "fmt"
-
-func (p *Personnage) TrainingFightGobelin() {
+func (p *Personnage) TrainingFightGobelin() { // Fonction qui lance le combat contre le Gobelin en fonction de l'initiative
 	p.Gobelin()
-	if p.initiative > p.goblin.initiative {
-		p.CombatPlayerFirst(1)
-	} else {
-		p.CombatMobFirst(1)
-	}
+	p.CombatPlayerFirst(1)
+	return
+
 }
 
-func (p *Personnage) TrainingFightVersGeant() {
+func (p *Personnage) TrainingFightVersGeant() { // Fonction qui lance le combat contre le Vers Géant en fonction de l'initiative
 	p.VersGeant()
-	if p.initiative > p.versgeant.initiative {
-		p.CombatPlayerFirst(2)
-	} else {
-		p.CombatMobFirst(2)
-	}
+	p.CombatPlayerFirst(2)
+	return
+
 }
 
-func (p *Personnage) TrainingFightTroll() {
+func (p *Personnage) TrainingFightTroll() { // Fonction qui lance le combat contre le Troll en fonction de l'initiative
 	p.Troll()
-	if p.initiative > p.troll.initiative {
-		p.CombatPlayerFirst(3)
-	} else {
-		p.CombatMobFirst(3)
-	}
+	p.CombatPlayerFirst(3)
+	return
 }
 
-func (p *Personnage) TrainingFightGorgone() {
+func (p *Personnage) TrainingFightGorgone() { // Fonction qui lance le combat contre la Gorgone en fonction de l'initiative
 	p.Gorgone()
-	if p.initiative > p.gorgone.initiative {
-		p.CombatPlayerFirst(4)
-	} else {
-		p.CombatMobFirst(4)
-	}
+	p.CombatMobFirst(4)
+	return
 }
 
-func (p *Personnage) CombatPlayerFirst(nbr int) {
+func (p *Personnage) CombatPlayerFirst(nbr int) { // Combat tour par tour où le Joueur joue en premier
 	var nbr_tour int = 1
-
 	for t := 1; t > 0; {
 		if p.exit == true {
 			p.exit = false
-			break
+			return
 		}
 		if p.point_de_vie_actuel > 0 {
+			if nbr == 1 {
+				if p.goblin.point_de_vie_actuel <= 0 {
+					break
+				}
+				if p.versgeant.point_de_vie_actuel <= 0 {
+					break
+				}
+				if p.troll.point_de_vie_actuel <= 0 {
+					break
+				}
+				if p.gorgone.point_de_vie_actuel <= 0 {
+					break
+				}
+			}
 			p.PlayerTurn(nbr)
 			if p.exit == true {
 				p.exit = false
@@ -59,94 +60,84 @@ func (p *Personnage) CombatPlayerFirst(nbr int) {
 		if nbr == 1 {
 			if p.goblin.point_de_vie_actuel > 0 {
 				p.GobelinTurn(nbr_tour)
-			} else {
-				p.money += 15
-				p.experience_actuel += 15
-				fmt.Println("Vous avez gagné le combat")
-				fmt.Println("Vous avez gagné 15 pièces d'or")
-				fmt.Println("Vous avez gagné 15 points d'expérience")
-				p.UpNiveau()
-				p.exit = true
-				p.Menu()
 			}
+
 		}
+
 		if nbr == 2 {
 			if p.versgeant.point_de_vie_actuel > 0 {
 				p.VersGeantTurn(nbr_tour)
-			} else {
-				p.money += 15
-				p.experience_actuel += 15
-				fmt.Print("Vous avez gagné le combat")
-				fmt.Println("Vous avez gagné 15 pièces d'or")
-				fmt.Println("Vous avez gagné 15 points d'expérience")
-				if p.TestAddInventory("Ecaille de vers géant") == true {
-					p.AddInventory("Ecaille de vers géant")
-					fmt.Println("Vous récupérez une écaille de vers géant")
-				} else {
-					fmt.Println("Vous n'avez pas de place dans votre inventaire")
-				}
-				p.UpNiveau()
-				p.exit = true
-				p.SeDeplacer()
 			}
 		}
 		if nbr == 3 {
 			if p.troll.point_de_vie_actuel > 0 {
 				p.TrollTurn(nbr_tour)
-			} else {
-				p.money += 15
-				p.experience_actuel += 15
-				fmt.Print("Vous avez gagné le combat")
-				fmt.Println("Vous avez gagné 15 pièces d'or")
-				fmt.Println("Vous avez gagné 15 points d'expérience")
-				p.UpNiveau()
-				p.exit = true
-
-				p.SeDeplacer()
 			}
 		}
 		if nbr == 4 {
 			if p.gorgone.point_de_vie_actuel > 0 {
 				p.GorgoneTurn(nbr_tour)
-			} else {
-				p.money += 15
-				p.experience_actuel += 15
-				fmt.Print("Vous avez gagné le combat")
-				fmt.Println("Vous avez gagné 15 pièces d'or")
-				fmt.Println("Vous avez gagné 15 points d'expérience")
-				p.UpNiveau()
-				p.exit = true
-
-				p.SeDeplacer()
 			}
 		}
+
 	}
 }
 
-func (p *Personnage) CombatMobFirst(nbr int) {
+func (p *Personnage) CombatMobFirst(nbr2 int) { // Combat tour par tour où le Monstre joue en premier
 	var nbr_tour int = 1
-	for e := 0; e >= 0; {
-		if p.point_de_vie_actuel > 0 {
-			if nbr == 1 {
-				p.GobelinTurn(nbr_tour)
-			}
-			if nbr == 2 {
-				p.VersGeantTurn(nbr_tour)
-			}
-			if nbr == 3 {
-				p.TrollTurn(nbr_tour)
-			}
-			if nbr == 4 {
-				p.GorgoneTurn(nbr_tour)
-			}
-		}
-		if p.point_de_vie_actuel <= 0 {
-			p.Wasted()
-			break
-		}
-		p.PlayerTurn(nbr)
+	for t := 1; t > 0; {
 		if p.exit == true {
 			p.exit = false
+			return
+		}
+		if nbr2 == 1 {
+			if p.goblin.point_de_vie_actuel > 0 {
+				p.GobelinTurn(nbr_tour)
+			} else {
+				break
+			}
+		}
+		if nbr2 == 2 {
+			if p.versgeant.point_de_vie_actuel > 0 {
+				p.VersGeantTurn(nbr_tour)
+			} else {
+				break
+			}
+			if p.exit == true {
+				p.exit = false
+				return
+
+			}
+		}
+		if nbr2 == 3 {
+			if p.troll.point_de_vie_actuel > 0 {
+				p.TrollTurn(nbr_tour)
+			} else {
+				break
+			}
+			if p.exit == true {
+				p.exit = false
+				return
+
+			}
+		}
+		if nbr2 == 4 {
+
+			if p.gorgone.point_de_vie_actuel > 0 {
+				p.GorgoneTurn(nbr_tour)
+			} else {
+				break
+			}
+			if p.exit == true {
+				p.exit = false
+				return
+
+			}
+		}
+		if p.point_de_vie_actuel > 0 {
+			p.PlayerTurn(nbr2)
+		} else {
+			p.Wasted()
 			break
 		}
 	}
